@@ -182,12 +182,37 @@ img {
 }
 
 .field-group__button--hidden {
+  position: relative;
   padding: 5px;
   width: 35px;
   height: 35px;
   border: none;
   border-radius: 50%;
   cursor: pointer;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 30px;
+    height: 30px;
+    background-image: url('../images/arrow.svg');
+    background-size: 30px 30px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    transform: rotate(90deg);
+    transition-duration: 0.5s;
+  }
+}
+
+.field-group__bar--close .field-group__button--hidden {
+  &::before {
+    transform: rotate(-90deg);
+  }
 }
 
 .field-group__button--remove {
@@ -199,7 +224,6 @@ img {
   border: none;
   cursor: pointer;
   background-color: inherit;
-
 
   &::before,
   &::after {
@@ -223,6 +247,12 @@ img {
   &::after {
     transform: rotate(45deg);
   }
+}
+
+.remove {
+  transition-duration: 0.5s;
+  transform: translateX(-300px);
+  opacity: 0;
 }
 
 .field-group__button--remove:hover {

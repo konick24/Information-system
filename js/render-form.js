@@ -7,7 +7,8 @@ const fieldGroupList = fieldsetTemplate.querySelector('.field-group__list')
 
 const onButtonRemove = (evt) => {
   if (evt.target.closest('.field-group__button--remove')) {
-    evt.target.closest('.field-group').remove();
+    evt.target.closest('.field-group').classList.add('remove');
+    setTimeout(() => evt.target.closest('.field-group').remove(), 500);
   }
 };
 
