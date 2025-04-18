@@ -1,0 +1,268 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.visually-hidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  background-color: #f5f5f5;
+  font-size: 16px;
+  line-height: 20px;
+  color: #0f0f0f;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 15px;
+  color: #ffe4c2;
+  border: none;
+  min-width: 150px;
+  text-decoration: none;
+  text-align: center;
+  font-size: 22px;
+  background-color: #ff8c00;
+  border-radius: 5px;
+  transition-duration: 0.1s;
+  cursor: pointer;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 2px #ac5e00;
+}
+
+.button:focus {
+  transform: translateY(-2px);
+  box-shadow: 0px 2px #ac5e00;
+}
+
+.button:active {
+  transform: none;
+  box-shadow: none;
+}
+
+.container {
+  width: 1220px;
+  margin: 0 auto;
+}
+
+/* Header */
+
+.page-header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px 30px;
+  background-color: aqua;
+}
+
+.page-header__bar {
+  padding: 20px;
+  background-color: aquamarine;
+  border-radius: 5px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  text-decoration: none;
+  color:#665959;
+}
+
+.page-header__title {
+  margin: 0;
+  font-size: 30px;
+  text-transform: uppercase;
+}
+
+.nav__button{
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* Main */
+
+.block__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  background-color: #ebebeb;
+}
+
+.block__list {
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+  background-color: #ff8c00;
+  border-radius: 5px;
+}
+
+.block__link {
+  display: block;
+  padding: 5px 12px;
+  text-decoration: none;
+  text-align: center;
+  color: #ffffff;
+  background-color: #cf7200;
+  border-radius: 5px;
+  transition-duration: 0.1s;
+}
+
+.block__link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 2px #ac5e00;
+}
+
+.block__link:focus {
+  transform: translateY(-2px);
+  box-shadow: 0px 2px #ac5e00;
+}
+
+.block__link:active {
+  transform: none;
+  box-shadow: none;
+}
+
+.main-form__container {
+  padding: 30px 0;
+  display: flex;
+  justify-content: center;
+  background-color: #ebebeb;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.field-group {
+  position: relative;
+  margin: 0;
+  padding: 25px;
+  background-color: #dcdcdc;
+  border-radius: 5px;
+  border: none;
+}
+
+.field-group__bar {
+  display: flex;
+  align-items: center;
+  background-color: #dcdcdc;
+}
+
+.field-group__title {
+  margin-left: 20px;
+  font-size: 22px;
+  line-height: 1;
+}
+
+.field-group__button--hidden {
+  padding: 5px;
+  width: 35px;
+  height: 35px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.field-group__button--remove {
+  position: relative;
+  justify-self: end;
+  margin-left: auto;
+  width: 30px;
+  height: 30px;
+  border: none;
+  cursor: pointer;
+  background-color: inherit;
+
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    width: 25px;
+    height: 3px;
+    background-color: #b0b0b0;
+    transition-duration: 0.3s;
+  }
+
+  &::before {
+    transform: rotate(-45deg);
+  }
+
+  &::after {
+    transform: rotate(45deg);
+  }
+}
+
+.field-group__button--remove:hover {
+  &::before,
+  &::after {
+    background-color: #cc0000;
+  }
+}
+
+.field-group__list {
+  margin: 0;
+  padding: 0;
+  margin-top: 25px;
+  max-height: 100vh;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow: hidden;
+  transition-duration: 0.5s;
+  opacity: 1;
+}
+
+.field-group__bar--close ~ .field-group__list {
+  margin-top: 0;
+  max-height: 0;
+  opacity: 0;
+  transition-duration: 0.5s;
+}
+
+.field-group__input {
+  padding: 10px;
+  font-size: 16px;
+  line-height: 20px;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+}
+
+.field-group--description {
+  min-height: 100px;
+  resize: vertical;
+}
