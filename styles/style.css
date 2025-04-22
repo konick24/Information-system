@@ -20,8 +20,8 @@
 body {
   margin: 0;
   background-color: #f5f5f5;
-  font-size: 16px;
-  line-height: 20px;
+  font-size: 14px;
+  line-height: 18px;
   color: #0f0f0f;
 }
 
@@ -35,10 +35,10 @@ img {
   padding: 10px 15px;
   color: #ffe4c2;
   border: none;
-  min-width: 150px;
+  min-width: 100px;
   text-decoration: none;
   text-align: center;
-  font-size: 22px;
+  font-size: 14px;
   background-color: #ff8c00;
   border-radius: 5px;
   transition-duration: 0.1s;
@@ -61,38 +61,41 @@ img {
 }
 
 .container {
-  width: 1220px;
-  margin: 0 auto;
+  margin: 0 15px;
 }
 
 /* Header */
 
 .page-header__container {
+  margin: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 50px 30px;
+  padding: 15px 20px;
   background-color: aqua;
 }
 
 .page-header__bar {
-  padding: 20px;
+  padding: 10px;
   background-color: aquamarine;
   border-radius: 5px;
 }
 
 .logo {
   display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 72px;
   align-items: center;
-  gap: 20px;
   text-decoration: none;
   color:#665959;
 }
 
-.page-header__title {
+.logo__title {
   margin: 0;
-  font-size: 30px;
+  font-size: 16px;
   text-transform: uppercase;
+  word-break: break-all;
 }
 
 .nav__button{
@@ -102,12 +105,17 @@ img {
 
 /* Main */
 
-.block__container {
+.page-main {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 30px;
+  min-height: 100vh;
+}
+
+.block {
   background-color: #ebebeb;
+}
+
+.block__container {
+  padding: 15px 0;
 }
 
 .block__list {
@@ -123,7 +131,9 @@ img {
 
 .block__link {
   display: block;
-  padding: 5px 12px;
+  padding: 10px 12px;
+  font-size: 18px;
+  line-height: 20px;
   text-decoration: none;
   text-align: center;
   color: #ffffff;
@@ -147,23 +157,24 @@ img {
   box-shadow: none;
 }
 
-.main-form__container {
-  padding: 30px 0;
-  display: flex;
-  justify-content: center;
+.main-form {
   background-color: #ebebeb;
+}
+
+.main-form__container {
+  padding: 15px 0;
 }
 
 .form {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 15px;
 }
 
 .field-group {
   position: relative;
   margin: 0;
-  padding: 25px;
+  padding: 20px;
   background-color: #dcdcdc;
   border-radius: 5px;
   border: none;
@@ -177,7 +188,7 @@ img {
 
 .field-group__title {
   margin-left: 20px;
-  font-size: 22px;
+  font-size: 20px;
   line-height: 1;
 }
 
@@ -238,6 +249,7 @@ img {
     height: 3px;
     background-color: #b0b0b0;
     transition-duration: 0.3s;
+    border-radius: 4px;
   }
 
   &::before {
@@ -265,7 +277,7 @@ img {
 .field-group__list {
   margin: 0;
   padding: 0;
-  margin-top: 25px;
+  margin-top: 20px;
   max-height: 100vh;
   list-style: none;
   display: flex;
@@ -285,8 +297,8 @@ img {
 
 .field-group__input {
   padding: 10px;
-  font-size: 16px;
-  line-height: 20px;
+  font-size: 14px;
+  line-height: 18px;
   width: 100%;
   border: none;
   border-radius: 5px;
@@ -295,4 +307,10 @@ img {
 .field-group--description {
   min-height: 100px;
   resize: vertical;
+}
+
+.form__buttons {
+  display: flex;
+  justify-content: end;
+  gap: 15px;
 }
