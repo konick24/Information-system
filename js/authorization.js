@@ -1,0 +1,1 @@
+import './validate-auth.js';

@@ -15,13 +15,15 @@
       <div class="auth__container container">
         <h2 class="auth__title">Вход в систему</h2>
         <form class="auth__form auth-form">
-          <div class="auth-form__field auth-field">
-            <label class="auth-field__title auth-field__title--login" for="input-name">Логин</label>
-            <input class="auth-field__input input auth-field__input--login" type="text" id="input-name" name="Логин">
-          </div>
-          <div class="auth-form__field auth-field">
-            <label class="auth-field__title auth-field__title--password" for="input-password">Пароль</label>
-            <input class="auth-field__input input auth-field__input--password" type="password" id="input-password" name="Пароль">
+          <div class="auth-form__container">
+            <div class="auth-form__field auth-field">
+              <label class="auth-field__title auth-field__title--login" for="input-name">Логин</label>
+              <input class="auth-field__input input auth-field__input--login" type="text" id="input-name" name="Логин">
+            </div>
+            <div class="auth-form__field auth-field">
+              <label class="auth-field__title auth-field__title--password" for="input-password">Пароль</label>
+              <input class="auth-field__input input auth-field__input--password" type="password" id="input-password" name="Пароль">
+            </div>
           </div>
           <div class="auth-form__buttons auth-buttons">
             <button class="auth-buttons__button button auth-buttons__button--reset" type="reset">Очистить</button>
@@ -32,7 +34,8 @@
     </section>
 
   </main>
-
+  <script src="./vendor/pristine/pristine.min.js"></script>
+  <script src="./js/authorization.js" type="module"></script>
 </body>
 
 </html>
