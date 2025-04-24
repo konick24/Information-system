@@ -13,16 +13,30 @@ const pristine = new Pristine(authFormElement, {
 }, false)
 
 const isValidLogin = (login) => {
+  let status = false;
+  console.log(login);
+  console.log(EMPLOYEES.find((employee) => employee.auth.login === login));
   if (EMPLOYEES.find((employee) => employee.auth.login === login)) {
+    status = true;
+    console.log(status);
     return true;
   }
+  console.log(status);
   return false;
 }
 
 const isValidPassword = (password) => {
+  // if (EMPLOYEES.find((employee) => employee.auth.password === password)) {
+  //   return true;
+  // }
+  // return false;
+  let status = false;
   if (EMPLOYEES.find((employee) => employee.auth.password === password)) {
+    status = true;
+    console.log(status);
     return true;
   }
+  console.log(status);
   return false;
 }
 
@@ -30,7 +44,7 @@ pristine.addValidator(
   loginElement,
   isValidLogin,
   textError
-);
+)
 
 pristine.addValidator(
   passwordElement,
@@ -38,13 +52,20 @@ pristine.addValidator(
   textError
 )
 
-const isValid = () => pristine.validate();
+const isValid = () => {
+  // console.log(`валидация ${pristine.validate()}`);
+  return pristine.validate()};
+
+const resetPristine = () => pristine.reset();
+
+loginElement.addEventListener('input', () => resetPristine());
+passwordElement.addEventListener('input', () => resetPristine());
 
 authFormElement.addEventListener('submit', (evt) => {
   evt.preventDefault();
   if (isValid()) {
-    const datas = new FormData(evt.target);
     console.log(`форма валидна`);
+    const datas = new FormData(evt.target);
     for (const data of datas.entries()) {
       console.log(data);
     }
