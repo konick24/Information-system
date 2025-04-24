@@ -1,0 +1,46 @@
+.block {
+  background-color: #ebebeb;
+}
+
+.block__container {
+  padding: 15px 0;
+}
+
+.block__list {
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+  background-color: #ff8c00;
+  border-radius: 5px;
+}
+
+.block__link {
+  display: block;
+  padding: 10px 12px;
+  font-size: 18px;
+  line-height: 20px;
+  text-decoration: none;
+  text-align: center;
+  color: #ffffff;
+  background-color: #cf7200;
+  border-radius: 5px;
+  transition-duration: 0.1s;
+}
+
+.block__link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 2px #ac5e00;
+}
+
+.block__link:focus {
+  transform: translateY(-2px);
+  box-shadow: 0px 2px #ac5e00;
+}
+
+.block__link:active {
+  transform: none;
+  box-shadow: none;
+}

@@ -1,0 +1,16 @@
+.logo {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 72px;
+  align-items: center;
+  text-decoration: none;
+  color:#665959;
+}
+
+.logo__title {
+  margin: 0;
+  font-size: 16px;
+  text-transform: uppercase;
+  word-break: break-all;
+}
