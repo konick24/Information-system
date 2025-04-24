@@ -30,7 +30,7 @@ pristine.addValidator(
   loginElement,
   isValidLogin,
   textError
-);
+)
 
 pristine.addValidator(
   passwordElement,
@@ -45,6 +45,7 @@ authFormElement.addEventListener('submit', (evt) => {
   if (isValid()) {
     const datas = new FormData(evt.target);
     console.log(`форма валидна`);
+
     for (const data of datas.entries()) {
       console.log(data);
     }
