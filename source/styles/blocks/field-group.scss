@@ -1,0 +1,124 @@
+.field-group {
+  position: relative;
+  margin: 0;
+  padding: 20px;
+  background-color: #dcdcdc;
+  border-radius: 5px;
+  border: none;
+}
+
+.field-group__bar {
+  display: flex;
+  align-items: center;
+  background-color: #dcdcdc;
+}
+
+.field-group__title {
+  margin-left: 20px;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.field-group__button {
+  &--hidden {
+    position: relative;
+    padding: 5px;
+    width: 35px;
+    height: 35px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      width: 30px;
+      height: 30px;
+      background-image: url('../images/arrow.svg');
+      background-size: 30px 30px;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      transform: rotate(90deg);
+      transition-duration: 0.5s;
+    }
+
+    .field-group__bar--close & {
+      &::before {
+        transform: rotate(-90deg);
+      }
+    }
+  }
+
+  &--remove {
+    position: relative;
+    justify-self: end;
+    margin-left: auto;
+    width: 30px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+    background-color: inherit;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      margin: auto;
+      width: 25px;
+      height: 3px;
+      background-color: #b0b0b0;
+      transition-duration: 0.3s;
+      border-radius: 4px;
+    }
+
+    &::before {
+      transform: rotate(-45deg);
+    }
+
+    &::after {
+      transform: rotate(45deg);
+    }
+
+    &:hover {
+      &::before,
+      &::after {
+        background-color: #cc0000;
+      }
+    }
+  }
+}
+
+.field-group__list {
+  margin: 0;
+  padding: 0;
+  margin-top: 20px;
+  max-height: 100vh;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow: hidden;
+  transition-duration: 0.5s;
+  opacity: 1;
+
+  .field-group__bar--close ~ & {
+    margin-top: 0;
+    max-height: 0;
+    opacity: 0;
+    transition-duration: 0.5s;
+  }
+}
+
+.field-group__input--description {
+  min-height: 100px;
+  resize: vertical;
+}
