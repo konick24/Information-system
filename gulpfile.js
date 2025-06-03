@@ -6,8 +6,14 @@ import clean from 'gulp-clean-css';
 import concat from 'gulp-concat';
 import map from 'gulp-sourcemaps';
 import browser from 'browser-sync';
+import include from 'gulp-file-include';
+import uglify from 'gulp-uglify-es';
 
 const sass = gulpSass(dartSass);
+
+export const html = () => {
+  return gulp.src('source/**/*.html').pipe(include()).pipe(gulp.dest('build')).pipe(browser.stream())
+}
 
 export const style = () => {
   return gulp.src('source/styles/styles.scss', { sourcemaps: true })
@@ -36,12 +42,21 @@ export const style = () => {
   .pipe(browser.stream())
 }
 
+// export const devJs = () => {
+//   return gulp.src('source/js/main.js')
+//     .pipe(map.init())
+//     .pipe(uglify.default())
+//     .pipe(concat('main.min.js'))
+//     .pipe(map.write('../sourcemaps'))
+//     .pipe(gulp.dest('build/js/'))
+//     .pipe(browser.stream())
+// }
+
 export const copy = (done) => {
   return gulp.src([
     "source/*.html",
     "source/images/**/*.svg",
     "source/js/**/*.js",
-    "source/vendor/**/*.*"
   ], {base: "source"})
   .pipe(gulp.dest("build"))
 }
@@ -62,7 +77,6 @@ export const server = () => {
         });
       }
     },
-    browser: 'chrome',
 	  logPrefix: 'BS-HTML:',
 	  logLevel: 'info',
 	  logConnections: true,
@@ -73,9 +87,12 @@ export const server = () => {
 
 export const watching = () => {
   gulp.watch('source/styles/**/*.scss', gulp.parallel('style'));
+  gulp.watch('source/**/*.html', gulp.parallel('html'));
+  // gulp.watch('source/js/**/*.js', gulp.parallel('devJs'));
 }
 
 export default gulp.series(
+  style,
   copy,
   gulp.parallel(
     server,

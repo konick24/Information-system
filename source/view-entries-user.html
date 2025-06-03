@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/style.min.css">
+</head>
+
+<body>
+  <header class="page-header">
+    <div class='page-header__container container'>
+      <div class="page-header__bar">
+        <a class="page-header__logo logo" href="#">
+          <img class="logo__icon" src="./images/logo.svg" width="20" height="20" alt="Логотип компании">
+          <span class="logo__title logo__title--one">ВС в</span>
+          <span class="logo__title logo__title--two">тонусе</span>
+        </a>
+      </div>
+      <nav class="page-header__nav nav">
+        <!-- <a class="nav__button nav__button--exit button" href="#">Выход</a> -->
+        <a class="nav__button nav__button--back button" href="./mechanic.html">Назад</a>
+      </nav>
+    </div>
+  </header>
+  <main class="page-main">
+    <h1 class="visually-hidden">Просмотр записей</h1>
+    <section class="page-main__section entry">
+      <div class="entry__container container">
+        <div class="entry__bar">
+          <h2 class="entry__heading">Список записей</h2>
+        </div>
+        <ul class="entry__list">
+
+        </ul>
+      </div>
+    </section>
+  </main>
+  <template id="entry-item">
+    <li class="entry__item entry-item">
+      <div class="entry-item__bar">
+        <h3 class="entry-item__heading">Исполнитель - Тип ВС</h3>
+        <button class="entry-item__button entry-item__button--remove" type="button">
+          <span class="visually-hidden">Удалить</span>
+        </button>
+      </div>
+      <ul class="entry-item__list">
+        <li class="entry-item__item">
+          <p class="entry-item__text entry-item__text--date">Дата</p>
+        </li>
+        <li class="entry-item__item">
+          <p class="entry-item__text entry-item__text--executor">Исполнитель</p>
+        </li>
+        <li class="entry-item__item">
+          <p class="entry-item__text entry-item__text--title">Тип ВС</p>
+        </li>
+        <li class="entry-item__item">
+          <p class="entry-item__text entry-item__text--component">Деталь/Агрегат</p>
+        </li>
+        <li class="entry-item__item">
+          <p class="entry-item__text entry-item__text--description">Дополнительная информация</p>
+        </li>
+      </ul>
+    </li>
+  </template>
+  <script src="./js/view-entries.js" type="module"></script>
+</body>
+
+</html>

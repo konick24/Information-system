@@ -20,7 +20,7 @@
       </div>
       <nav class="page-header__nav nav">
         <!-- <a class="nav__button nav__button--exit button" href="#">Выход</a> -->
-        <a class="nav__button nav__button--back button" href="./index.html">Назад</a>
+        <a class="nav__button nav__button--back button" href="./mechanic.html">Назад</a>
       </nav>
     </div>
   </header>
@@ -29,12 +29,15 @@
     <section class="page-main__section main-form">
       <div class="main-form__container container">
         <form class="main-form__form form" method="post" action="#">
-          <fieldset class="from__field-group field-group">
+          <fieldset class="from__field-group field-group" data-fieldset-id="0">
             <div class="field-group__bar">
               <button class="field-group__button field-group__button--hidden" type="button">
                 <span class="visually-hidden">Свернуть</span>
               </button>
-              <legend class="field-group__title">Название</legend>
+              <legend class="field-group__title">
+                <span class="field-group__name">Название</span>
+                <span class="field-group__aircraft"></span>
+              </legend>
               <button class="field-group__button field-group__button--remove" type="button">
                 <span class="visually-hidden">Удалить</span>
               </button>
@@ -44,16 +47,22 @@
                 <input class="field-group__input input field-group--date" type="date" name="Дата">
               </li>
               <li class="field-group__item">
-                <input class="field-group__input input field-group--title" type="text" name="Тип ВС" placeholder="Тип ВС">
+                <select class="field-group__input input field-group--executor" name="Исполнитель">
+                  <option value="" disable selected hidden>Исполнитель</option>
+                </select>
               </li>
               <li class="field-group__item">
-                <input class="field-group__input input field-group--executor" type="text" name="Исполнитель" placeholder="Исполнитель">
+                <select class="field-group__input input field-group--title" name="Тип ВС">
+                  <option value="" disable selected hidden>Тип ВС</option>
+                </select>
               </li>
               <li class="field-group__item">
-                <input class="field-group__input input field-group--hours" type="text" name="Налёт" placeholder="Налёт">
+                <select class="field-group__input input field-group--component" name="Деталь/Агрегат">
+                  <option value="" disable selected hidden>Деталь/Агрегат</option>
+                </select>
               </li>
               <li class="field-group__item">
-                <textarea class="field-group__input field-group--description" type="text" name="Дополнительная информация" placeholder="Дополнительная информация"></textarea>
+                <textarea class="field-group__input input field-group--description" type="text" name="Дополнительная информация" placeholder="Дополнительная информация"></textarea>
               </li>
             </ul>
           </fieldset>
@@ -71,26 +80,35 @@
         <button class="field-group__button field-group__button--hidden" type="button">
           <span class="visually-hidden">Свернуть</span>
         </button>
-        <legend class="field-group__title">Название</legend>
+        <legend class="field-group__title">
+          <span class="field-group__name">Название</span>
+          <span class="field-group__aircraft"></span>
+        </legend>
         <button class="field-group__button field-group__button--remove" type="button">
           <span class="visually-hidden">Удалить</span>
         </button>
       </div>
       <ul class="field-group__list">
         <li class="field-group__item">
-          <input class="field-group__input field-group--date" type="date" name="Дата">
+          <input class="field-group__input input field-group--date" type="date" name="Дата">
         </li>
         <li class="field-group__item">
-          <input class="field-group__input field-group--title" type="text" name="Тип ВС" placeholder="Тип ВС">
+          <select class="field-group__input input field-group--executor" name="Исполнитель">
+            <option value="" disable selected hidden>Исполнитель</option>
+          </select>
         </li>
         <li class="field-group__item">
-          <input class="field-group__input field-group--executor" type="text" name="Исполнитель" placeholder="Исполнитель">
+          <select class="field-group__input input field-group--title" name="Тип ВС">
+            <option value="" disable selected hidden>Тип ВС</option>
+          </select>
         </li>
         <li class="field-group__item">
-          <input class="field-group__input field-group--hours" type="text" name="Налёт" placeholder="Налёт">
+          <select class="field-group__input input field-group--component" name="Деталь/Агрегат">
+            <option value="" disable selected hidden>Деталь/Агрегат</option>
+          </select>
         </li>
         <li class="field-group__item">
-          <textarea class="field-group__input field-group--description" type="text" name="Дополнительная информация" placeholder="Дополнительная информация"></textarea>
+          <textarea class="field-group__input input field-group--description" type="text" name="Дополнительная информация" placeholder="Дополнительная информация"></textarea>
         </li>
       </ul>
     </fieldset>

@@ -1,12 +1,12 @@
-.block {
+.main-menu {
   background-color: #ebebeb;
 }
 
-.block__container {
+.main-menu__container {
   padding: 15px 0;
 }
 
-.block__list {
+.main-menu__list {
   margin: 0;
   padding: 20px;
   display: flex;
@@ -17,7 +17,7 @@
   border-radius: 5px;
 }
 
-.block__link {
+.main-menu__link {
   display: block;
   padding: 10px 12px;
   font-size: 18px;
@@ -30,17 +30,17 @@
   transition-duration: 0.1s;
 }
 
-.block__link:hover {
+.main-menu__link:hover {
   transform: translateY(-2px);
   box-shadow: 0px 2px #ac5e00;
 }
 
-.block__link:focus {
+.main-menu__link:focus {
   transform: translateY(-2px);
   box-shadow: 0px 2px #ac5e00;
 }
 
-.block__link:active {
+.main-menu__link:active {
   transform: none;
   box-shadow: none;
 }

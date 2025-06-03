@@ -1,18 +1,20 @@
 /*GLOBAL*/
-@import "./common/global.scss";
-@import "./common/visually-hidden.scss";
+@use "./common/global.scss";
+@use "./common/visually-hidden.scss";
 
 /*BLOCKS*/
-@import "./blocks/button.scss";
-@import "./blocks/container.scss";
-@import "./blocks/input.scss";
-@import "./blocks/auth.scss";
-@import "./blocks/auth-form.scss";
-@import "./blocks/page-header.scss";
-@import "./blocks/logo.scss";
-@import "./blocks/nav.scss";
-@import "./blocks/page-main.scss";
-@import "./blocks/block.scss";
-@import "./blocks/main-form.scss";
-@import "./blocks/form.scss";
-@import "./blocks/field-group.scss";
+@use "./blocks/button.scss";
+@use "./blocks/container.scss";
+@use "./blocks/input.scss";
+@use "./blocks/auth.scss";
+@use "./blocks/auth-form.scss";
+@use "./blocks/page-header.scss";
+@use "./blocks/logo.scss";
+@use "./blocks/nav.scss";
+@use "./blocks/page-main.scss";
+@use "./blocks/main-menu.scss";
+@use "./blocks/main-form.scss";
+@use "./blocks/form.scss";
+@use "./blocks/field-group.scss";
+@use "./blocks/entry.scss";
+@use "./blocks/entry-item.scss";

@@ -8,7 +8,9 @@
 }
 
 .field-group__bar {
-  display: flex;
+  display: grid;
+  grid-template-columns: 35px 1fr 30px;
+  min-height: 48px;
   align-items: center;
   background-color: #dcdcdc;
 }
@@ -16,7 +18,7 @@
 .field-group__title {
   margin-left: 20px;
   font-size: 20px;
-  line-height: 1;
+  line-height: 24px;
 }
 
 .field-group__button {
@@ -103,8 +105,7 @@
   margin-top: 20px;
   max-height: 100vh;
   list-style: none;
-  display: flex;
-  flex-direction: column;
+  display: grid;
   gap: 10px;
   overflow: hidden;
   transition-duration: 0.5s;
@@ -116,7 +117,35 @@
     opacity: 0;
     transition-duration: 0.5s;
   }
+
+  &--planning-form {
+    grid-template-columns: 1fr 1fr;
+  }
 }
+
+.field-group__item--task {
+  grid-column: 1 / -1;
+}
+
+.field-group__item--date {
+  @media (max-width: 767px) {
+    grid-column: 1 / -1;
+  }
+}
+
+// .field-group__date-container {
+//   @media (min-width: 768px) {
+//     display: grid;
+//     grid-template-columns: 1fr 1fr;
+//     gap: 10px;
+//   }
+// }
+
+// .field-group__executor-containter {
+//   display: grid;
+//   grid-template-columns: 1fr 1fr;
+//   gap: 10px;
+// }
 
 .field-group__input--description {
   min-height: 100px;
