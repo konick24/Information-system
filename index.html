@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/style.min.css">
+</head>
+
+<body>
+  <main class="page-main">
+    <h1 class="visually-hidden">Авторизация</h1>
+    <section class="page-main__section auth">
+      <div class="auth__container container">
+        <h2 class="auth__title">Вход в систему</h2>
+        <form class="auth__form auth-form">
+          <div class="auth-form__container">
+            <div class="auth-form__field">
+              <label class="auth-form__title auth-form__title--login" for="input-name">Логин</label>
+              <input class="auth-form__input input auth-form__input--login" type="text" id="input-name" name="Логин">
+            </div>
+            <div class="auth-form__field">
+              <label class="auth-form__title auth-form__title--password" for="input-password">Пароль</label>
+              <input class="auth-form__input input auth-form__input--password" type="password" id="input-password" name="Пароль">
+            </div>
+            <div class="auth-form__field">
+              <label class="auth-form__title auth-form__title--post" for="input-post">Должность</label>
+              <select class="auth-form__input input auth-form__input--post" id="input-post" name="Должность"></select>
+            </div>
+          </div>
+          <div class="auth-form__container-error"></div>
+          <div class="auth-form__buttons">
+            <button class="auth-form__button button auth-form__button--reset" type="reset">Очистить</button>
+            <button class="auth-form__button button auth-form__button--submit" type="submit">Отправить</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+  </main>
+  <script src="./js/authorization.js" type="module"></script>
+</body>
+
+</html>

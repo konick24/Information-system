@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/style.min.css">
+</head>
+
+<body>
+  <header class="page-header">
+    <div class='page-header__container container'>
+      <div class="page-header__bar">
+        <a class="page-header__logo logo" href="#">
+          <img class="logo__icon" src="./images/logo.svg" width="20" height="20" alt="Логотип компании">
+          <span class="logo__title logo__title--one">ВС в</span>
+          <span class="logo__title logo__title--two">тонусе</span>
+        </a>
+      </div>
+      <nav class="page-header__nav nav">
+        <!-- <a class="nav__button nav__button--exit button" href="#">Выход</a> -->
+        <a class="nav__button nav__button--back button" href="./mechanic.html">Назад</a>
+      </nav>
+    </div>
+  </header>
+  <main class="page-main">
+    <h1 class="visually-hidden">Форма добавления записи</h1>
+    <section class="page-main__section main-form">
+      <div class="main-form__container container">
+        <form class="main-form__form form" method="post" action="#">
+          <fieldset class="from__field-group field-group item" data-fieldset-id="0">
+            <div class="field-group__bar">
+              <button class="field-group__button field-group__button--hidden" type="button">
+                <span class="visually-hidden">Свернуть</span>
+              </button>
+              <legend class="field-group__title">
+                <span class="field-group__name">Название</span>
+                <span class="field-group__aircraft"></span>
+              </legend>
+              <button class="field-group__button field-group__button--remove button-remove" type="button">
+                <span class="visually-hidden">Удалить</span>
+              </button>
+            </div>
+            <ul class="field-group__list">
+              <li class="field-group__item">
+                <input class="field-group__input input field-group--date" type="date" name="Дата">
+              </li>
+              <li class="field-group__item">
+                <select class="field-group__input input field-group--executor" name="Исполнитель">
+                  <option value="" disable selected hidden>Исполнитель</option>
+                </select>
+              </li>
+              <li class="field-group__item">
+                <select class="field-group__input input field-group--title" name="Тип ВС">
+                  <option value="" disable selected hidden>Тип ВС</option>
+                </select>
+              </li>
+              <li class="field-group__item">
+                <select class="field-group__input input field-group--component" name="Деталь/Агрегат">
+                  <option value="" disable selected hidden>Деталь/Агрегат</option>
+                </select>
+              </li>
+              <li class="field-group__item">
+                <textarea class="field-group__input input field-group--description" type="text" name="Дополнительная информация" placeholder="Дополнительная информация"></textarea>
+              </li>
+            </ul>
+          </fieldset>
+          <div class="form__buttons">
+            <button class="main-form__button button main-form__button--insert" type="button">Добавить запись</button>
+            <button class="main-form__button button main-form__button--submit" type="submit">Отправить</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+  <template id="fieldset-insert">
+    <fieldset class="from__field-group field-group item">
+      <div class="field-group__bar">
+        <button class="field-group__button field-group__button--hidden" type="button">
+          <span class="visually-hidden">Свернуть</span>
+        </button>
+        <legend class="field-group__title">
+          <span class="field-group__name">Название</span>
+          <span class="field-group__aircraft"></span>
+        </legend>
+        <button class="field-group__button field-group__button--remove button-remove" type="button">
+          <span class="visually-hidden">Удалить</span>
+        </button>
+      </div>
+      <ul class="field-group__list">
+        <li class="field-group__item">
+          <input class="field-group__input input field-group--date" type="date" name="Дата">
+        </li>
+        <li class="field-group__item">
+          <select class="field-group__input input field-group--executor" name="Исполнитель">
+            <option value="" disable selected hidden>Исполнитель</option>
+          </select>
+        </li>
+        <li class="field-group__item">
+          <select class="field-group__input input field-group--title" name="Тип ВС">
+            <option value="" disable selected hidden>Тип ВС</option>
+          </select>
+        </li>
+        <li class="field-group__item">
+          <select class="field-group__input input field-group--component" name="Деталь/Агрегат">
+            <option value="" disable selected hidden>Деталь/Агрегат</option>
+          </select>
+        </li>
+        <li class="field-group__item">
+          <textarea class="field-group__input input field-group--description" type="text" name="Дополнительная информация" placeholder="Дополнительная информация"></textarea>
+        </li>
+      </ul>
+    </fieldset>
+  </template>
+  <script src="./js/main.js" type="module"></script>
+</body>
+
+</html>
