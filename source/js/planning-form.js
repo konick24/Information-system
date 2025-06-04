@@ -1,5 +1,5 @@
 import { createId, onButtonFormHidden, onButtonFormRemove, getSelectList } from "./components/util.js";
-import { MAINTENANCE, SPECIALIZATIONS, EMPLOYEES, ATA } from "./components/data.js";
+import { selectParametrs } from "./components/constants.js";
 
 const formElement = document.querySelector('.form');
 const formLastElement = formElement.querySelector('.form__buttons');
@@ -11,16 +11,11 @@ const selectSpecializationClass = '.field-group__input--specialization';
 const selectExecutorClass = '.field-group__input--executor';
 const selectComponentClass = '.field-group__input--component';
 
-const selectTaskParam = ['Тип ВС', 'Деталь/Агрегат'];
-const selectSpecializationParam = ['specializationTitle'];
-const selectExecutorParam = ['lastName', 'firstName'];
-const selectComponentParam = ['componentCode'];
-
 const getSelectsPlanningForm = () => {
-  getSelectList(selectTaskClass, MAINTENANCE, selectTaskParam);
-  getSelectList(selectSpecializationClass, SPECIALIZATIONS, selectSpecializationParam);
-  getSelectList(selectExecutorClass, EMPLOYEES, selectExecutorParam);
-  getSelectList(selectComponentClass, ATA, selectComponentParam);
+  getSelectList(selectTaskClass, selectParametrs.task);
+  getSelectList(selectSpecializationClass, selectParametrs.specialization);
+  getSelectList(selectExecutorClass, selectParametrs.executor);
+  getSelectList(selectComponentClass, selectParametrs.component);
 }
 
 getSelectsPlanningForm();

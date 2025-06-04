@@ -5,12 +5,16 @@ const createId = () => {
   return () => currentId++;
 }
 
-const createSelectList = (selectElement, arr, parametrs) => {
+const createSelectList = (selectElement, arr, words, separator) => {
+  console.log(typeof(words.length));
   arr.forEach((item) => {
     const newOption = document.createElement('option');
     let text = '';
-    parametrs.forEach((param) => {
-      text += `${item[param]} `;
+    words.forEach((word, index) => {
+      text += `${item[word]} `;
+      if (separator && index !== words.length - 1) {
+         text += `${separator} `;
+      }
     })
     newOption.value = text;
     newOption.textContent = text;
@@ -18,10 +22,10 @@ const createSelectList = (selectElement, arr, parametrs) => {
   })
 }
 
-const getSelectList = (selectClass, arr, parametrs) => {
+const getSelectList = (selectClass, { array, words, separator }) => {
   const selectsElement = document.querySelectorAll(selectClass);
   const lastSelectElement = selectsElement[selectsElement.length - 1];
-  createSelectList(lastSelectElement, arr, parametrs);
+  createSelectList(lastSelectElement, array, words, separator);
 }
 
 const getObjectLength = (obj) => {
@@ -68,7 +72,6 @@ const onButtonFormHidden = (evt) => {
 
 export {
   createId,
-  createSelectList,
   getSelectList,
   onFormSubmit,
   onButtonFormRemove,

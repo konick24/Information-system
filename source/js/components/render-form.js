@@ -1,6 +1,6 @@
 import { getSelectList } from "./util.js";
-import { EMPLOYEES, ATA, AIRCRAFT_TYPES } from "./data.js";
 import { createId, onButtonFormHidden, onButtonFormRemove } from "./util.js";
+import { selectParametrs } from './constants.js';
 
 const formElement = document.querySelector('.form');
 const formLastElement = formElement.querySelector('.form__buttons');
@@ -10,10 +10,6 @@ const fieldsetTemplate = document.querySelector('#fieldset-insert').content.quer
 const selectExecutorClass = '.field-group--executor';
 const selectComponentClass = '.field-group--component';
 const selectAircraftClass = '.field-group--title';
-
-const selectExecutorParam = ['lastName', 'firstName'];
-const selectComponentParam = ['componentCode'];
-const selectAircraftTypeParam = ['aircraftType'];
 
 const onSelectChange = (evt) => {
   const fieldsetTitle = evt.target.closest('.field-group').querySelector('.field-group__title');
@@ -29,9 +25,9 @@ const onSelectChange = (evt) => {
 }
 
 const getSelectsInsertForm = () => {
-  getSelectList(selectExecutorClass, EMPLOYEES, selectExecutorParam);
-  getSelectList(selectComponentClass, ATA, selectComponentParam);
-  getSelectList(selectAircraftClass, AIRCRAFT_TYPES, selectAircraftTypeParam);
+  getSelectList(selectExecutorClass, selectParametrs.executor);
+  getSelectList(selectComponentClass, selectParametrs.component);
+  getSelectList(selectAircraftClass, selectParametrs.aircraftType);
 }
 
 getSelectsInsertForm();

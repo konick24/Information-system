@@ -1,8 +1,7 @@
 import './components/validate-auth.js';
 import { getSelectList } from './components/util.js';
-import { POSTS } from './components/data.js';
+import { selectParametrs } from './components/constants.js';
 
-const param = ['postName'];
 const selectPostClass = '.auth-form__input--post';
 
-getSelectList(selectPostClass, POSTS, param);
+getSelectList(selectPostClass, selectParametrs.post);

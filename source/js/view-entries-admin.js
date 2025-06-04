@@ -1,30 +1,28 @@
-import { createSelectList } from "./components/util.js";
-import { AIRCRAFT_TYPES, EMPLOYEES } from "./components/data.js";
+import { getSelectList } from "./components/util.js";
 import { getEntryList } from "./components/render-entry.js";
+import { selectParametrs } from "./components/constants.js";
 
 const selectMain = document.querySelector('.entry__select--main');
 const selectSecondary = document.querySelector('.entry__select--secondary');
+const selectSecondaryClass = '.entry__select--secondary'
 
 const selectParam = {
-  'Тип ВС': ['aircraftType'],
-  'Исполнитель': ['lastName', 'firstName'],
-  'Все': [],
+  'Тип ВС': selectParametrs.aircraftType,
+  'Исполнитель': selectParametrs.executor,
+  'Все': selectParametrs.default,
 }
 
 const createFilter = (mainParam) => {
+  selectSecondary.disabled = false;
+  selectSecondary.innerHTML = '';
   switch(mainParam) {
     case 'Тип ВС':
-      selectSecondary.disabled = false;
-      selectSecondary.innerHTML = '';
-      createSelectList(selectSecondary, AIRCRAFT_TYPES, selectParam[mainParam]);
+      getSelectList(selectSecondaryClass, selectParam[mainParam]);
       break;
     case 'Исполнитель':
-      selectSecondary.disabled = false;
-      selectSecondary.innerHTML = '';
-      createSelectList(selectSecondary, EMPLOYEES, selectParam[mainParam]);
+      getSelectList(selectSecondaryClass, selectParam[mainParam]);
       break;
     case 'Все':
-      selectSecondary.innerHTML = '';
       selectSecondary.disabled = true;
       break;
     }
