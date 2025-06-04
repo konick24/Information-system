@@ -95,7 +95,7 @@ const SPECIALIZATIONS = [
 //   }
 // ]
 
-// const SERVICE_WORKS = [
+const SERVICE_WORKS = [
 //   {
 //     idServiceWork: 1,
 //     maintenanceId: ,
@@ -107,7 +107,25 @@ const SPECIALIZATIONS = [
 //     endDateActual: '',
 //     status: ,
 //   }
-// ]
+  {
+  'Задача': 'a320 - 5345',
+  'Дата начала работы': '20-06-2025',
+  'Дата конца работы': '26-06-2025',
+  'Специальность': 'Работяга',
+  'Исполнитель': 'Швец Александр',
+  'Деталь/Агрегат': '5345',
+  'Количество': '1',
+  },
+  {
+  'Задача': 'Boeing-737 - 5345',
+  'Дата начала работы': '15-06-2025',
+  'Дата конца работы': '17-06-2025',
+  'Специальность': 'Ст. Специалист',
+  'Исполнитель': 'Корякин Артём',
+  'Деталь/Агрегат': '5345',
+  'Количество': '1',
+  },
+]
 
 const MAINTENANCE = [
   // {
@@ -173,7 +191,7 @@ export {
   // SERIAL_NUMBERS,
   // COMPONENTS,
   // COMPONENT_TYPES,
-  // SERVICE_WORKS,
+  SERVICE_WORKS,
   MAINTENANCE,
   ATA,
   POSTS,

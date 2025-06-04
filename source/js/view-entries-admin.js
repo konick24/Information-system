@@ -1,5 +1,5 @@
 import { getSelectList } from "./components/util.js";
-import { getEntryList } from "./components/render-entry.js";
+import { getEntryList } from "./components/render-list-entry.js";
 import { selectParametrs } from "./components/constants.js";
 
 const selectMain = document.querySelector('.entry__select--main');

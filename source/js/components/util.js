@@ -1,5 +1,3 @@
-import { maintenance } from './objects.js';
-
 const createId = () => {
   let currentId = 1;
   return () => currentId++;
@@ -36,16 +34,16 @@ const getObjectLength = (obj) => {
   return counter;
 }
 
-const onFormSubmit = (form, arr) => {
+const onFormSubmit = (form, arr, pattern) => {
   form.addEventListener('submit', (evt) => {
     evt.preventDefault();
 
     const formInputs = form.querySelectorAll('.input'); // все поля из формы
-    const objLength = getObjectLength(maintenance); // длина объекта
+    const objLength = getObjectLength(pattern); // длина объекта
     const objCount = formInputs.length / objLength; // итоговое количество объектов
 
     for (let i = 0; i < objCount; i++) {
-      let formObjectCopy = {...maintenance};
+      let formObjectCopy = {...pattern};
       for (let j = i * objLength; j < objLength * (i + 1); j++) {
         const key = formInputs[j].name;
         const value = formInputs[j].value;
@@ -58,9 +56,9 @@ const onFormSubmit = (form, arr) => {
 }
 
 const onButtonFormRemove = (evt) => {
-  if (evt.target.closest('.field-group__button--remove')) {
-    evt.target.closest('.field-group').classList.add('remove');
-    setTimeout(() => evt.target.closest('.field-group').remove(), 500);
+  if (evt.target.closest('.button-remove')) {
+    evt.target.closest('.item').classList.add('remove');
+    setTimeout(() => evt.target.closest('.item').remove(), 500);
   }
 };
 

@@ -1,3 +1,3 @@
-import { getEntryList } from './components/render-entry.js';
+import { getEntryList } from './components/render-list-entry.js';
 
 getEntryList();

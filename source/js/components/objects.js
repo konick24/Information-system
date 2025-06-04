@@ -14,6 +14,29 @@ const maintenance = {
   //   description: '',
 }
 
+const serviceWork = {
+  'Задача': '',
+  'Дата начала работы': '',
+  'Дата конца работы': '',
+  'Специальность': '',
+  'Исполнитель': '',
+  'Деталь/Агрегат': '',
+  'Количество': '',
+  // 'Дата конца работы по факту': '',
+
+//     idServiceWork: 1,
+//     maintenanceId: ,
+//     scheduledStartDate: '',
+//     scheduledEndDate: '',
+//     employeeId: ,
+//     maintenanceWorkId: ,
+//     startDateActual: '',
+//     endDateActual: '',
+//     status: ,
+
+}
+
 export {
-  maintenance
+  maintenance,
+  serviceWork,
 }
