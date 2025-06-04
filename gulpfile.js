@@ -91,6 +91,11 @@ export const watching = () => {
   // gulp.watch('source/js/**/*.js', gulp.parallel('devJs'));
 }
 
+export const build = gulp.series(
+  style,
+  copy,
+)
+
 export default gulp.series(
   style,
   copy,
