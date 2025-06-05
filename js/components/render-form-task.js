@@ -1,4 +1,4 @@
-import { createId, onButtonFormHidden, onButtonFormRemove, getSelectList } from "./util.js";
+import { onButtonFormHidden, onButtonFormRemove, getSelectList } from "./util.js";
 import { selectParametrs } from "./constants.js";
 
 const formElement = document.querySelector('.form');
@@ -6,10 +6,10 @@ const formLastElement = formElement.querySelector('.form__buttons');
 const insertButton = formLastElement.querySelector('.main-form__button--insert');
 const fieldsetTemplate = document.querySelector('#planning-form').content.querySelector('.field-group');
 
-const selectTaskClass = '.field-group__input--task';
-const selectSpecializationClass = '.field-group__input--specialization';
-const selectExecutorClass = '.field-group__input--executor';
-const selectComponentClass = '.field-group__input--component';
+const selectTaskClass = '.field-group__select--task';
+const selectSpecializationClass = '.field-group__select--specialization';
+const selectExecutorClass = '.field-group__select--executor';
+const selectComponentClass = '.field-group__select--component';
 
 const getSelectsPlanningForm = () => {
   getSelectList(selectTaskClass, selectParametrs.task);
@@ -20,11 +20,8 @@ const getSelectsPlanningForm = () => {
 
 getSelectsPlanningForm();
 
-const getId = createId();
-
 const onButtonInsertFieldset = () => {
   const newFieldset = fieldsetTemplate.cloneNode(true);
-  newFieldset.dataset.fieldsetId = getId();
   formLastElement.insertAdjacentElement('beforebegin', newFieldset);
   getSelectsPlanningForm();
 };

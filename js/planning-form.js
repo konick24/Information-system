@@ -4,5 +4,6 @@ import { onFormSubmit } from './components/util.js';
 import { serviceWork } from './components/objects.js';
 
 const formElement = document.querySelector('.main-form__form');
+const message = 'В работе';
 
-onFormSubmit(formElement, SERVICE_WORKS, serviceWork);
+onFormSubmit(formElement, SERVICE_WORKS, serviceWork, message);

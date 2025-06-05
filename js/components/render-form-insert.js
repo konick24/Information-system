@@ -7,9 +7,11 @@ const formLastElement = formElement.querySelector('.form__buttons');
 const insertButton = formLastElement.querySelector('.main-form__button--insert');
 const fieldsetTemplate = document.querySelector('#fieldset-insert').content.querySelector('.field-group');
 
-const selectExecutorClass = '.field-group--executor';
-const selectComponentClass = '.field-group--component';
-const selectAircraftClass = '.field-group--title';
+const selectExecutorClass = '.field-group__select--executor';
+const selectComponentClass = '.field-group__select--component';
+const selectAircraftClass = '.field-group__select--title';
+
+let currentId = 1;
 
 const onSelectChange = (evt) => {
   const fieldsetTitle = evt.target.closest('.field-group').querySelector('.field-group__title');
@@ -32,14 +34,13 @@ const getSelectsInsertForm = () => {
 
 getSelectsInsertForm();
 
-const getId = createId();
-
 const onButtonInsertFieldset = () => {
   const newFieldset = fieldsetTemplate.cloneNode(true);
-  newFieldset.dataset.fieldsetId = getId();
   formLastElement.insertAdjacentElement('beforebegin', newFieldset);
   getSelectsInsertForm();
 };
+
+console.log(document.querySelector('.field-group__input--index'));
 
 formElement.addEventListener('click', onButtonFormRemove);
 formElement.addEventListener('click', onButtonFormHidden);

@@ -1,9 +1,8 @@
 import { MAINTENANCE } from "./data.js";
-import { createId, onButtonFormRemove } from "./util.js";
+import { onButtonFormRemove } from "./util.js";
 
 const entryListElement = document.querySelector('.entry__list');
 const entryElement = document.querySelector('#entry-item').content.querySelector('.entry-item');
-const getId = createId();
 
 let maintenances = [];
 
@@ -18,7 +17,7 @@ const createEntryList = (list) => {
     const component = entryElementCopy.querySelector('.entry-item__text--component');
     const description = entryElementCopy.querySelector('.entry-item__text--description');
 
-    entryElementCopy.dataset.entryItemId = getId();
+    entryElementCopy.dataset.entryItemId = item['idMaintenance'];
     heading.textContent = `${item['Исполнитель']} - ${item['Тип ВС']}`
     data.textContent = item['Дата'];
     executor.textContent = item['Исполнитель'];
