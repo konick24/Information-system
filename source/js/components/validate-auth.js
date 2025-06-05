@@ -3,7 +3,7 @@ import { EMPLOYEES } from "./data.js";
 const authFormElement = document.querySelector('.auth-form');
 const loginElement = authFormElement.querySelector('.auth-form__input--login');
 const passwordElement = authFormElement.querySelector('.auth-form__input--password');
-const postElement = authFormElement.querySelector('.auth-form__input--post');
+const postElement = authFormElement.querySelector('.auth-form__select--post');
 const errorElement = authFormElement.querySelector('.auth-form__container-error');
 
 let currentPost = '';

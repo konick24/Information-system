@@ -4,7 +4,6 @@ const createId = () => {
 }
 
 const createSelectList = (selectElement, arr, words, separator) => {
-  console.log(typeof(words.length));
   arr.forEach((item) => {
     const newOption = document.createElement('option');
     let text = '';
@@ -34,8 +33,9 @@ const getObjectLength = (obj) => {
   return counter;
 }
 
-const onFormSubmit = (form, arr, pattern) => {
+const onFormSubmit = (form, arr, pattern, message) => {
   form.addEventListener('submit', (evt) => {
+    let lastId = arr.length + 1;
     evt.preventDefault();
 
     const formInputs = form.querySelectorAll('.input'); // все поля из формы
@@ -45,8 +45,21 @@ const onFormSubmit = (form, arr, pattern) => {
     for (let i = 0; i < objCount; i++) {
       let formObjectCopy = {...pattern};
       for (let j = i * objLength; j < objLength * (i + 1); j++) {
-        const key = formInputs[j].name;
-        const value = formInputs[j].value;
+        let key;
+        let value;
+        if (j === i * objLength || j === i * objLength + 1) {
+          if (j === i * objLength) {
+            console.log(j === i * objLength);
+            key = formInputs[j].name;
+            value = lastId++;
+          } else if (message) {
+            key = formInputs[j].name;
+            value = message;
+          }
+        } else {
+          key = formInputs[j].name;
+          value = formInputs[j].value;
+        }
         formObjectCopy[key] = value;
       }
       arr.push(formObjectCopy);
@@ -56,7 +69,7 @@ const onFormSubmit = (form, arr, pattern) => {
 }
 
 const onButtonFormRemove = (evt) => {
-  if (evt.target.closest('.button-remove')) {
+  if (evt.target.closest('.button-remove') || evt.target.closest('.task-item__button--submit')) {
     evt.target.closest('.item').classList.add('remove');
     setTimeout(() => evt.target.closest('.item').remove(), 500);
   }
@@ -68,10 +81,23 @@ const onButtonFormHidden = (evt) => {
   }
 };
 
+const onFormItemSubmit = (form, arr, message) => {
+  form.addEventListener('submit', (evt) => {
+    evt.preventDefault();
+    const id = evt.target.closest('.item').dataset.taskItemId;
+    const formInput = form.querySelector('.input');
+    arr[id - 1][formInput.name] = formInput.value;
+    arr[id - 1]['Статус'] = message;
+    console.log(arr);
+    onButtonFormRemove(evt);
+  })
+}
+
 export {
   createId,
   getSelectList,
   onFormSubmit,
+  onFormItemSubmit,
   onButtonFormRemove,
-  onButtonFormHidden
+  onButtonFormHidden,
 }

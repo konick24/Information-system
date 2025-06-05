@@ -31,53 +31,16 @@
         <div class="task__bar">
           <h2 class="task__heading">Список задач</h2>
           <div class="task__select-container">
-            <select class="task__select task__select--main" name="Фильтр">
+            <select class="task__select input task__select--main" name="Фильтр">
               <option value="Все">Все записи</option>
               <option value="Тип ВС">По типу ВС</option>
               <option value="Исполнитель">По сотруднику</option>
             </select>
-            <select class="task__select entry__select--secondary" name="Критерий фильтрации">
+            <select class="task__select input task__select--secondary" name="Критерий фильтрации">
             </select>
           </div>
         </div>
         <ul class="task__list">
-
-          <li class="task__item task-item">
-            <div class="task-item__bar">
-              <h3 class="task-item__heading">Исполнитель - Тип ВС</h3>
-              <button class="task-item__button task-item__button--remove" type="button">
-                <span class="visually-hidden">Удалить</span>
-              </button>
-            </div>
-            <ul class="task-item__list">
-              <li class="task-item__item">
-                <p class="task-item__text task-item__text--task-name">Название задачи</p>
-              </li>
-              <li class="task-item__item">
-                <p class="task-item__text task-item__text--date-start">Дата начала</p>
-              </li>
-              <li class="task-item__item">
-                <p class="task-item__text task-item__text--date-end">Дата завершения</p>
-              </li>
-              <li class="task-item__item">
-                <p class="task-item__text task-item__text--executor">Исполнитель</p>
-              </li>
-              <li class="task-item__item">
-                <p class="task-item__text task-item__text--component">Компонент</p>
-              </li>
-              <li class="task-item__item">
-                <p class="task-item__text task-item__text--quantity">Количество</p>
-              </li>
-              <li class="task-item__item">
-                <input class="task-item__text task-item__text--date-end-actual" type="date">
-              </li>
-              <li class="task-item__item">
-                <div class="task-item__buttons">
-                  <button class="task-item__button button">Завершить работу</button>
-                </div>
-              </li>
-            </ul>
-          </li>
 
         </ul>
       </div>
@@ -85,40 +48,42 @@
   </main>
   <template id="task-item">
     <li class="task__item task-item item">
-      <div class="task-item__bar">
-        <h3 class="task-item__heading">Исполнитель - Тип ВС</h3>
-        <button class="task-item__button task-item__button--remove button-remove" type="button">
-          <span class="visually-hidden">Удалить</span>
-        </button>
-      </div>
-      <ul class="task-item__list">
-        <li class="task-item__item">
-          <p class="task-item__text task-item__text--task-name">Название задачи</p>
-        </li>
-        <li class="task-item__item">
-          <p class="task-item__text task-item__text--date-start">Дата начала</p>
-        </li>
-        <li class="task-item__item">
-          <p class="task-item__text task-item__text--date-end">Дата завершения</p>
-        </li>
-        <li class="task-item__item">
-          <p class="task-item__text task-item__text--executor">Исполнитель</p>
-        </li>
-        <li class="task-item__item">
-          <p class="task-item__text task-item__text--component">Компонент</p>
-        </li>
-        <li class="task-item__item">
-          <p class="task-item__text task-item__text--quantity">Количество</p>
-        </li>
-        <li class="task-item__item">
-          <input class="task-item__input input task-item__input--date-end-actual" type="date">
-        </li>
-        <li class="task-item__item">
-          <div class="task-item__buttons">
-            <button class="task-item__button button">Завершить работу</button>
-          </div>
-        </li>
-      </ul>
+      <form class="item__form form" method="post" action="#">
+        <div class="task-item__bar">
+          <h3 class="task-item__heading">Элемент-форма</h3>
+          <button class="task-item__button task-item__button--remove button-remove" type="button">
+            <span class="visually-hidden">Удалить</span>
+          </button>
+        </div>
+        <ul class="task-item__list">
+          <li class="task-item__item">
+            <p class="task-item__text task-item__text--task-name">Название задачи</p>
+          </li>
+          <li class="task-item__item">
+            <p class="task-item__text task-item__text--date-start">Дата начала</p>
+          </li>
+          <li class="task-item__item">
+            <p class="task-item__text task-item__text--date-end">Дата завершения</p>
+          </li>
+          <li class="task-item__item">
+            <p class="task-item__text task-item__text--executor">Исполнитель</p>
+          </li>
+          <li class="task-item__item">
+            <p class="task-item__text task-item__text--component">Компонент</p>
+          </li>
+          <li class="task-item__item">
+            <p class="task-item__text task-item__text--quantity">Количество</p>
+          </li>
+          <li class="task-item__item">
+            <input class="task-item__input input task-item__input--date-end-actual" type="date" name="Дата завершения работы по факту">
+          </li>
+          <li class="task-item__item">
+            <div class="task-item__buttons">
+              <button class="task-item__button button task-item__button--submit" type="submit">Завершить работу</button>
+            </div>
+          </li>
+        </ul>
+      </form>
     </li>
   </template>
   <script src="./js/view-task.js" type="module"></script>

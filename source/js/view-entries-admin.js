@@ -12,7 +12,7 @@ const selectParam = {
   'Все': selectParametrs.default,
 }
 
-const createFilter = (mainParam) => {
+const createEntryFilter = (mainParam) => {
   selectSecondary.disabled = false;
   selectSecondary.innerHTML = '';
   switch(mainParam) {
@@ -28,13 +28,13 @@ const createFilter = (mainParam) => {
     }
 }
 
-createFilter(selectMain.value);
+createEntryFilter(selectMain.value);
 
 selectMain.addEventListener('input', (evt) => {
-  createFilter(evt.target.value);
+  createEntryFilter(evt.target.value);
   getEntryList(evt.target.value.trim(), selectSecondary.value.trim());
 });
 
 selectSecondary.addEventListener('input', (evt) => getEntryList(selectMain.value.trim(), evt.target.value.trim()));
 
-export { createFilter };
+export { createEntryFilter };

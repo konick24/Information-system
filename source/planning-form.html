@@ -39,9 +39,12 @@
                 <span class="visually-hidden">Удалить</span>
               </button>
             </div>
+            <input class="entry__input input entry__input--index" type="text" name="idServiceWork" hidden>
+            <input class="entry__input input entry__input--status" type="text" name="Статус" hidden>
+            <input class="entry__input input entry__input--date-end-fact" type="text" name="Дата завершения работы по факту" hidden>
             <ul class="field-group__list field-group__list--planning-form">
               <li class="field-group__item field-group__item--task">
-                <select class="field-group__input input field-group__input--task" name="Задача">
+                <select class="field-group__select input field-group__select--task" name="Задача">
                   <option value="" disable selected hidden>Задача</option>
                 </select>
               </li>
@@ -55,17 +58,17 @@
               </li>
 
               <li class="field-group__item">
-                <select class="field-group__input input field-group__input--specialization" name="Специальность">
+                <select class="field-group__select input field-group__select--specialization" name="Специальность">
                   <option value="" disable selected hidden>Специальность</option>
                 </select>
               </li>
               <li class="field-group__item">
-                <select class="field-group__input input field-group__input--executor" name="Исполнитель">
+                <select class="field-group__select input field-group__select--executor" name="Исполнитель">
                   <option value="" disable selected hidden>Сортудник</option>
                 </select>
               </li>
               <li class="field-group__item">
-                <select class="field-group__input input field-group__input--component" name="Деталь/Агрегат">
+                <select class="field-group__select input field-group__select--component" name="Деталь/Агрегат">
                   <option value="" disable selected hidden>Компонент</option>
                 </select>
               </li>
@@ -93,9 +96,12 @@
           <span class="visually-hidden">Удалить</span>
         </button>
       </div>
+      <input class="entry__input input entry__input--index" type="text" name="idServiceWork" hidden>
+      <input class="entry__input input entry__input--status" type="text" name="Статус" hidden>
+      <input class="entry__input input entry__input--date-end-fact" type="text" name="Дата завершения работы по факту" hidden>
       <ul class="field-group__list">
         <li class="field-group__item field-group__item--task">
-          <select class="field-group__input input field-group__input--task" name="Задача">
+          <select class="field-group__select input field-group__select--task" name="Задача">
             <option value="" disable selected hidden>Задача</option>
           </select>
         </li>
@@ -109,22 +115,22 @@
         </li>
 
         <li class="field-group__item">
-          <select class="field-group__input input field-group__input--specialization" name="Специальность">
+          <select class="field-group__select input field-group__select--specialization" name="Специальность">
             <option value="" disable selected hidden>Специальность</option>
           </select>
         </li>
         <li class="field-group__item">
-          <select class="field-group__input input field-group__input--executor" name="Исполнитель">
+          <select class="field-group__select input field-group__select--executor" name="Исполнитель">
             <option value="" disable selected hidden>Сортудник</option>
           </select>
         </li>
         <li class="field-group__item">
-          <select class="field-group__input input field-group__input--component" name="Компонент">
+          <select class="field-group__select input field-group__select--component" name="Компонент">
             <option value="" disable selected hidden>Компонент</option>
           </select>
         </li>
         <li class="field-group__item">
-          <select class="field-group__input input field-group__input--quantity" name="Количество">
+          <select class="field-group__select input field-group__select--quantity" name="Количество">
             <option value="" disable selected hidden>Количество</option>
           </select>
         </li>
