@@ -12,7 +12,7 @@
   <header class="page-header">
     <div class='page-header__container container'>
       <div class="page-header__bar">
-        <a class="page-header__logo logo" href="#">
+        <a class="page-header__logo logo" href="./administrator.html">
           <img class="logo__icon" src="./images/logo.svg" width="20" height="20" alt="Логотип компании">
           <span class="logo__title logo__title--one">ВС в</span>
           <span class="logo__title logo__title--two">тонусе</span>
@@ -57,25 +57,44 @@
         </div>
         <ul class="task-item__list">
           <li class="task-item__item">
-            <p class="task-item__text task-item__text--task-name">Название задачи</p>
+            <div class="task-item__task-name task-name">
+              <span class="task-name__label"></span>
+              <span class="task-name__text task-name__text--name">Название задачи</span>
+            </div>
           </li>
           <li class="task-item__item">
-            <p class="task-item__text task-item__text--date-start">Дата начала</p>
+            <div class="task-item__container">
+              <div class="task-item__date date">
+                <span class="date__label">Дата начала</span>
+                <span class="date__text date__text--start">Дата начала</span>
+              </div>
+              <div class="task-item__date date">
+                <span class="date__label">Дата завершения</span>
+                <span class="date__text date__text--end">Дата завершения</span>
+              </div>
+            </div>
           </li>
           <li class="task-item__item">
-            <p class="task-item__text task-item__text--date-end">Дата завершения</p>
+            <div class="task-item__executor executor">
+              <span class="executor__label">Исполнитель</span>
+              <span class="executor__text executor__text--name">Исполнитель</span>
+            </div>
           </li>
           <li class="task-item__item">
-            <p class="task-item__text task-item__text--executor">Исполнитель</p>
+            <div class="task-item__container">
+              <div class="task-item__component component">
+                <span class="component__label">Компонент</span>
+                <span class="component__text component__text--name">Компонент</span>
+              </div>
+              <div class="task-item__quantity component">
+                <span class="component__label">Количество</span>
+                <span class="component__text component__text--quantity">Количество</span>
+              </div>
+            </div>
           </li>
           <li class="task-item__item">
-            <p class="task-item__text task-item__text--component">Компонент</p>
-          </li>
-          <li class="task-item__item">
-            <p class="task-item__text task-item__text--quantity">Количество</p>
-          </li>
-          <li class="task-item__item">
-            <input class="task-item__input input task-item__input--date-end-actual" type="date" name="Дата завершения работы по факту">
+            <label class="task-item__text--label" for="date-actual">Текущая дата</label>
+            <input class="task-item__input input task-item__input--date-end-actual" type="date" name="Дата завершения работы по факту" id="date-actual">
           </li>
           <li class="task-item__item">
             <div class="task-item__buttons">

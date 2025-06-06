@@ -1,0 +1,13 @@
+.executor {
+  display: flex;
+  flex-direction: column;
+}
+
+.executor__text {
+  padding: 10px;
+  min-height: 38px;
+  font-size: 14px;
+  line-height: 18px;
+  background-color: #fff;
+  border-radius: 5px;
+}

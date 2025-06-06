@@ -49,7 +49,6 @@ const onFormSubmit = (form, arr, pattern, message) => {
         let value;
         if (j === i * objLength || j === i * objLength + 1) {
           if (j === i * objLength) {
-            console.log(j === i * objLength);
             key = formInputs[j].name;
             value = lastId++;
           } else if (message) {
@@ -63,8 +62,8 @@ const onFormSubmit = (form, arr, pattern, message) => {
         formObjectCopy[key] = value;
       }
       arr.push(formObjectCopy);
-      console.log(arr);
     }
+    console.log(arr);
   })
 }
 

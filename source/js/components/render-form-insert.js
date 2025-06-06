@@ -1,5 +1,5 @@
 import { getSelectList } from "./util.js";
-import { createId, onButtonFormHidden, onButtonFormRemove } from "./util.js";
+import { onButtonFormHidden, onButtonFormRemove } from "./util.js";
 import { selectParametrs } from './constants.js';
 
 const formElement = document.querySelector('.form');
@@ -11,17 +11,15 @@ const selectExecutorClass = '.field-group__select--executor';
 const selectComponentClass = '.field-group__select--component';
 const selectAircraftClass = '.field-group__select--title';
 
-let currentId = 1;
-
 const onSelectChange = (evt) => {
   const fieldsetTitle = evt.target.closest('.field-group').querySelector('.field-group__title');
   const fieldsetName = fieldsetTitle.querySelector('.field-group__name');
   const fieldsetAircraft = fieldsetTitle.querySelector('.field-group__aircraft');
 
-  if (evt.target.closest('.field-group--executor')) {
+  if (evt.target.closest('.field-group__select--executor')) {
     fieldsetName.textContent = `${evt.target.value}`;
   }
-  if (fieldsetName.textContent !== 'Название' && evt.target.closest('.field-group--title')) {
+  if (fieldsetName.textContent !== 'Название' && evt.target.closest('.field-group__select--title')) {
     fieldsetAircraft.textContent = ` - ${evt.target.value}`;
   }
 }
@@ -39,8 +37,6 @@ const onButtonInsertFieldset = () => {
   formLastElement.insertAdjacentElement('beforebegin', newFieldset);
   getSelectsInsertForm();
 };
-
-console.log(document.querySelector('.field-group__input--index'));
 
 formElement.addEventListener('click', onButtonFormRemove);
 formElement.addEventListener('click', onButtonFormHidden);

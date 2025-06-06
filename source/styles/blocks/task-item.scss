@@ -82,9 +82,16 @@
 .task-item__text {
   margin: 0;
   padding: 10px;
+  display: block;
   min-height: 38px;
   font-size: 14px;
   line-height: 18px;
   background-color: #ffffff;
   border-radius: 5px;
+}
+
+.task-item__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
 }
