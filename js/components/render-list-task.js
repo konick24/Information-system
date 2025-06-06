@@ -6,28 +6,17 @@ const taskElement = document.querySelector('#task-item').content.querySelector('
 
 let servicesWork = [];
 
-// const onFormItemSubmit = (form, arr, message) => {
-//   form.addEventListener('submit', (evt) => {
-//     evt.preventDefault();
-//     const id = evt.target.closest('.item').dataset.taskItemId;
-//     const formInput = form.querySelector('.input');
-//     arr[id - 1][formInput.name] = formInput.value;
-//     arr[id - 1]['Статус'] = message;
-//     console.log(arr);
-//   })
-// }
-
 const createTaskList = (list) => {
   taskListElement.innerHTML = '';
   list.forEach((item) => {
     const taskElementCopy = taskElement.cloneNode(true);
     const heading = taskElementCopy.querySelector('.task-item__heading');
-    const taskName = taskElementCopy.querySelector('.task-item__text--task-name');
-    const dateStart = taskElementCopy.querySelector('.task-item__text--date-start');
-    const dateEnd = taskElementCopy.querySelector('.task-item__text--date-end');
-    const executor = taskElementCopy.querySelector('.task-item__text--executor');
-    const component = taskElementCopy.querySelector('.task-item__text--component');
-    const quantity = taskElementCopy.querySelector('.task-item__text--quantity');
+    const taskName = taskElementCopy.querySelector('.task-name__text--name');
+    const dateStart = taskElementCopy.querySelector('.date__text--start');
+    const dateEnd = taskElementCopy.querySelector('.date__text--end');
+    const executor = taskElementCopy.querySelector('.executor__text--name');
+    const component = taskElementCopy.querySelector('.component__text--name');
+    const quantity = taskElementCopy.querySelector('.component__text--quantity');
     const form = taskElementCopy.querySelector('.form');
 
     taskElementCopy.dataset.taskItemId = item['idServiceWork'];
