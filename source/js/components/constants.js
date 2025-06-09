@@ -1,13 +1,19 @@
 import {
+  AIRCRAFTS,
   EMPLOYEES,
   POSTS,
   ATA,
   AIRCRAFT_TYPES,
   MAINTENANCE,
-  SPECIALIZATIONS
+  CATEGORIES,
 } from "./data.js"
 
 const selectParametrs = {
+  aircraft: {
+    array: AIRCRAFTS,
+    words: ['registrationNumber'],
+    separator: '',
+  },
   post: {
     array: POSTS,
     words: ['postName'],
@@ -30,12 +36,12 @@ const selectParametrs = {
   },
   task: {
     array: MAINTENANCE,
-    words: ['Тип ВС', 'Деталь/Агрегат'],
+    words: ['aircraft_type', 'board'],
     separator: '-',
   },
-  specialization: {
-    array: SPECIALIZATIONS,
-    words: ['specializationTitle'],
+  category: {
+    array: CATEGORIES,
+    words: ['categoryTitle'],
     separator: '',
   },
   default: {

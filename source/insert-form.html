@@ -28,15 +28,15 @@
     <h1 class="visually-hidden">Форма добавления записи</h1>
     <section class="page-main__section main-form">
       <div class="main-form__container container">
-        <form class="main-form__form form" method="post" action="#">
+        <form class="main-form__form form" method="post" enctype="multipart/form-data" action="#">
           <fieldset class="from__field-group field-group item" data-fieldset-id="0">
             <div class="field-group__bar">
               <button class="field-group__button field-group__button--hidden" type="button">
                 <span class="visually-hidden">Свернуть</span>
               </button>
               <legend class="field-group__title">
-                <span class="field-group__name">Название</span>
-                <span class="field-group__aircraft"></span>
+                <span class="field-group__technician">Название</span>
+                <span class="field-group__board"></span>
               </legend>
               <button class="field-group__button field-group__button--remove button-remove" type="button">
                 <span class="visually-hidden">Удалить</span>
@@ -45,25 +45,39 @@
             <input class="field-group__input input field-group__input--index" type="text" name="idMaintenance" hidden>
             <ul class="field-group__list">
               <li class="field-group__item">
-                <input class="field-group__input input field-group__input--date" type="date" name="Дата">
+                <input class="field-group__input input field-group__input--date" type="date" name="date">
               </li>
               <li class="field-group__item">
-                <select class="field-group__select input field-group__select--executor" name="Исполнитель">
-                  <option value="" disable selected hidden>Исполнитель</option>
+                <select class="field-group__select input field-group__select--technician" name="technician">
+                  <option value="" disable selected hidden>Техник</option>
                 </select>
               </li>
               <li class="field-group__item">
-                <select class="field-group__select input field-group__select--title" name="Тип ВС">
+                <select class="field-group__select input field-group__select--aircraft-type" name="aircraft_type">
                   <option value="" disable selected hidden>Тип ВС</option>
                 </select>
               </li>
               <li class="field-group__item">
-                <select class="field-group__select input field-group__select--component" name="Деталь/Агрегат">
+                <select class="field-group__select input field-group__select--board" name="board">
+                  <option value="" disable selected hidden>Борт</option>
+                </select>
+              </li>
+              <li class="field-group__item">
+                <select class="field-group__select input field-group__select--component" name="part_unit">
                   <option value="" disable selected hidden>Деталь/Агрегат</option>
                 </select>
               </li>
               <li class="field-group__item">
-                <textarea class="field-group__input input field-group__input--description" type="text" name="Дополнительная информация" placeholder="Дополнительная информация"></textarea>
+                <textarea class="field-group__input input field-group__input--additional-information" type="text" name="additional_information" placeholder="Дополнительная информация"></textarea>
+              </li>
+              <li class="field-group__item input-file">
+                <div class="input-file__container">
+                  <input class="input-file__input input" type="file" name="file" id="input-file" multiple>
+                  <label class="input-file__label label" for="input-file">
+                    <div class="label__text" type="text"></div>
+                    <div class="label__button button" type="button">Выберите файл</div>
+                  </label>
+                </div>
               </li>
             </ul>
           </fieldset>
@@ -76,7 +90,7 @@
     </section>
   </main>
   <template id="fieldset-insert">
-    <fieldset class="from__field-group field-group item">
+    <fieldset class="from__field-group field-group item" data-fieldset-id="0">
       <div class="field-group__bar">
         <button class="field-group__button field-group__button--hidden" type="button">
           <span class="visually-hidden">Свернуть</span>
@@ -92,25 +106,25 @@
       <input class="field-group__input input field-group__input--index" type="text" name="idMaintenance" hidden>
       <ul class="field-group__list">
         <li class="field-group__item">
-          <input class="field-group__input input field-group--date" type="date" name="Дата">
+          <input class="field-group__input input field-group__input--date" type="date" name="date">
         </li>
         <li class="field-group__item">
-          <select class="field-group__select input field-group__select--executor" name="Исполнитель">
-            <option value="" disable selected hidden>Исполнитель</option>
+          <select class="field-group__select input field-group__select--technician" name="technician">
+            <option value="" disable selected hidden>Техник</option>
           </select>
         </li>
         <li class="field-group__item">
-          <select class="field-group__select input field-group__select--title" name="Тип ВС">
+          <select class="field-group__select input field-group__select--aircraft-type" name="aircraft_type">
             <option value="" disable selected hidden>Тип ВС</option>
           </select>
         </li>
         <li class="field-group__item">
-          <select class="field-group__select input field-group__select--component" name="Деталь/Агрегат">
+          <select class="field-group__select input field-group__select--component" name="part_unit">
             <option value="" disable selected hidden>Деталь/Агрегат</option>
           </select>
         </li>
         <li class="field-group__item">
-          <textarea class="field-group__input input field-group__input--description" type="text" name="Дополнительная информация" placeholder="Дополнительная информация"></textarea>
+          <textarea class="field-group__input input field-group__input--additional-information" type="text" name="additional_information" placeholder="Дополнительная информация"></textarea>
         </li>
       </ul>
     </fieldset>

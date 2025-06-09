@@ -40,40 +40,39 @@
               </button>
             </div>
             <input class="entry__input input entry__input--index" type="text" name="idServiceWork" hidden>
-            <input class="entry__input input entry__input--status" type="text" name="Статус" hidden>
-            <input class="entry__input input entry__input--date-end-fact" type="text" name="Дата завершения работы по факту" hidden>
+            <input class="entry__input input entry__input--status" type="text" name="status" hidden>
+            <input class="entry__input input entry__input--date-end-fact" type="text" name="date_end_fact" hidden>
             <ul class="field-group__list field-group__list--planning-form">
               <li class="field-group__item field-group__item--task">
-                <select class="field-group__select input field-group__select--task" name="Задача">
+                <select class="field-group__select input field-group__select--task" name="task">
                   <option value="" disable selected hidden>Задача</option>
                 </select>
               </li>
               <li class="field-group__item field-group__item--date">
                 <label class="field-group__text" for="scheduledStartDate">Дата начала работы</label>
-                <input class="field-group__input input field-group__input--date" type="date" name="Дата начала работы" id="scheduledStartDate">
+                <input class="field-group__input input field-group__input--date" type="date" name="date_start" id="scheduledStartDate">
               </li>
               <li class="field-group__item field-group__item--date">
                 <label class="field-group__text" for="scheduledEndDate">Дата конца работы</label>
-                <input class="field-group__input input field-group__input--date" type="date" name="Дата конца работы" id="scheduledEndDate">
+                <input class="field-group__input input field-group__input--date" type="date" name="date_end" id="scheduledEndDate">
               </li>
-
               <li class="field-group__item">
-                <select class="field-group__select input field-group__select--specialization" name="Специальность">
-                  <option value="" disable selected hidden>Специальность</option>
+                <select class="field-group__select input field-group__select--category" name="category">
+                  <option value="" disable selected hidden>Категория</option>
                 </select>
               </li>
               <li class="field-group__item">
-                <select class="field-group__select input field-group__select--executor" name="Исполнитель">
-                  <option value="" disable selected hidden>Сортудник</option>
+                <select class="field-group__select input field-group__select--technician" name="technician">
+                  <option value="" disable selected hidden>Техник</option>
                 </select>
               </li>
               <li class="field-group__item">
-                <select class="field-group__select input field-group__select--component" name="Деталь/Агрегат">
-                  <option value="" disable selected hidden>Компонент</option>
+                <select class="field-group__select input field-group__select--component" name="part_unit">
+                  <option value="" disable selected hidden>Деталь/Агрегат</option>
                 </select>
               </li>
               <li class="field-group__item">
-                <input class="field-group__input input field-group__input--quantity" type="text" name="Количество" placeholder="Количество">
+                <input class="field-group__input input field-group__input--quantity" type="text" name="quantity" placeholder="Количество">
               </li>
             </ul>
           </fieldset>

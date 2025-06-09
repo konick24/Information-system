@@ -13,8 +13,8 @@ const createSelectList = (selectElement, arr, words, separator) => {
          text += `${separator} `;
       }
     })
-    newOption.value = text;
-    newOption.textContent = text;
+    newOption.value = text.trim();
+    newOption.textContent = text.trim();
     selectElement.insertAdjacentElement('beforeend', newOption);
   })
 }
@@ -54,6 +54,8 @@ const onFormSubmit = (form, arr, pattern, message) => {
           } else if (message) {
             key = formInputs[j].name;
             value = message;
+          } else {
+            continue;
           }
         } else {
           key = formInputs[j].name;

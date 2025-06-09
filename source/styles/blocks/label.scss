@@ -1,0 +1,16 @@
+.label {
+  display: grid;
+  grid-template-columns: 1fr max-content;
+}
+
+.label__text {
+	padding: 10px;
+  min-height: 38px;
+	border-radius: 6px 0px 0 6px;
+  background-color: #ffffff
+}
+
+.label__button {
+	border-radius: 0 4px 4px 0;
+  position: relative;
+}
