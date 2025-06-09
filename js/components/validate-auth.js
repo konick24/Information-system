@@ -8,6 +8,11 @@ const errorElement = authFormElement.querySelector('.auth-form__container-error'
 
 let currentPost = '';
 
+const POST = {
+  'Техник': 'technician',
+  'Инженер': 'engineer',
+}
+
 const isValidLogin = (employee, login) => {
   if (employee.auth.login === login) {
     return true;
@@ -49,7 +54,7 @@ authFormElement.addEventListener('submit', (evt) => {
   evt.preventDefault();
   if (isValid()) {
     console.log(`форма валидна`);
-    window.location = `./${currentPost}.html`;
+    window.location = `./${POST[currentPost]}.html`;
   } else {
     console.log(`форма не валидна`);
   }

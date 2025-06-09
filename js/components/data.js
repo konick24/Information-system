@@ -52,7 +52,7 @@ const EMPLOYEES = [
     lastName: 'Корякин',
     firstName: 'Артём',
     patronymic: 'Алексеевич',
-    post: 'technician',
+    post: 'Техник',
     specializacionId: 43,
     auth: {
       login: 'konick',
@@ -64,7 +64,7 @@ const EMPLOYEES = [
     lastName: 'Швец',
     firstName: 'Александр',
     patronymic: 'Дмитриевич',
-    post: 'engineer',
+    post: 'Инженер',
     specializacionId: 34,
     auth: {
       login: 'sasha456',
@@ -76,7 +76,7 @@ const EMPLOYEES = [
     lastName: 'Клейменова',
     firstName: 'Полина',
     patronymic: 'Валерьевна',
-    post: 'administrator',
+    post: 'Инженер',
     specializacionId: 12,
     auth: {
       login: 'polina789',
@@ -196,11 +196,11 @@ const ATA = [
 const POSTS = [
   {
     idPost: 1,
-    postName: 'technician',
+    postName: 'Техник',
   },
   {
     idPost: 2,
-    postName: 'engineer',
+    postName: 'Инженер',
   }
 ]
 
