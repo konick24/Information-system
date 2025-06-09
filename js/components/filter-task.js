@@ -5,8 +5,8 @@ const selectSecondary = document.querySelector('.task__select--secondary');
 const selectSecondaryClass = '.task__select--secondary'
 
 const selectParam = {
-  'Тип ВС': selectParametrs.aircraftType,
-  'Исполнитель': selectParametrs.executor,
+  'aircraft_type': selectParametrs.aircraftType,
+  'technician': selectParametrs.executor,
   'Все': selectParametrs.default,
 }
 
@@ -14,10 +14,10 @@ const createTaskFilter = (mainParam) => {
   selectSecondary.disabled = false;
   selectSecondary.innerHTML = '';
   switch(mainParam) {
-    case 'Тип ВС':
+    case 'aircraft_type':
       getSelectList(selectSecondaryClass, selectParam[mainParam]);
       break;
-    case 'Исполнитель':
+    case 'technician':
       getSelectList(selectSecondaryClass, selectParam[mainParam]);
       break;
     case 'Все':

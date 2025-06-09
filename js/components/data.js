@@ -1,14 +1,32 @@
-// const AIRCRAFTS = [
-//   {
-//     idAircraft: 1,
-//     factoryNumber: '',
-//     registrationNumber: '',
-//     serialNumberId: '',
-//     aircraftTypeId: ,
-//     flightTime: ,
-//     status: true,
-//   }
-// ]
+const AIRCRAFTS = [
+  {
+    idAircraft: 1,
+    factoryNumber: '765312',
+    registrationNumber: '314f134f',
+    serialNumber: '3fqwef3435',
+    aircraftType: 'a320',
+    flightTime: 1245,
+    status: true,
+  },
+    {
+    idAircraft: 2,
+    factoryNumber: '235231',
+    registrationNumber: '786743h',
+    serialNumber: '3fqwef3435',
+    aircraftType: 'Boeing-737',
+    flightTime: 1755,
+    status: true,
+  },
+    {
+    idAircraft: 3,
+    factoryNumber: '5435434',
+    registrationNumber: '345fg',
+    serialNumber: '756erfg34',
+    aircraftType: 'a320',
+    flightTime: 978,
+    status: true,
+  }
+]
 
 const AIRCRAFT_TYPES = [
   {
@@ -34,7 +52,7 @@ const EMPLOYEES = [
     lastName: 'Корякин',
     firstName: 'Артём',
     patronymic: 'Алексеевич',
-    post: 'mechanic',
+    post: 'technician',
     specializacionId: 43,
     auth: {
       login: 'konick',
@@ -46,7 +64,7 @@ const EMPLOYEES = [
     lastName: 'Швец',
     firstName: 'Александр',
     patronymic: 'Дмитриевич',
-    post: 'administrator',
+    post: 'engineer',
     specializacionId: 34,
     auth: {
       login: 'sasha456',
@@ -67,10 +85,10 @@ const EMPLOYEES = [
   }
 ]
 
-const SPECIALIZATIONS = [
+const CATEGORIES = [
   {
-    idSpecialization: 1,
-    specializationTitle: 'Роботяга',
+    idCategory: 1,
+    categoryTitle: 'Роботяга',
   }
 ]
 
@@ -108,68 +126,52 @@ const SPECIALIZATIONS = [
 // ]
 
 const SERVICE_WORKS = [
-//   {
-//     idServiceWork: 1,
-//     maintenanceId: ,
-//     scheduledStartDate: '',
-//     scheduledEndDate: '',
-//     employeeId: ,
-//     maintenanceWorkId: ,
-//     startDateActual: '',
-//     endDateActual: '',
-//     status: ,
-//   }
   {
-    'idServiceWork': '1',
-    'Задача': 'a320 - 5345',
-    'Дата начала работы': '20-06-2025',
-    'Дата конца работы': '26-06-2025',
-    'Специальность': 'Работяга',
-    'Исполнитель': 'Швец Александр',
-    'Деталь/Агрегат': '5345',
-    'Количество': '1',
-    'Дата завершения работы по факту': '',
-    'Статус': '',
+    idServiceWork: 1,
+    task: '',
+    date_start: '20-06-2025',
+    date_end: '26-06-2025',
+    category: 'Работяга',
+    technician: 'Швец Александр',
+    part_unit: '5345',
+    quantity: '1',
+    date_end_fact: '',
+    status: 'В работе',
   },
-  {
-    'idServiceWork': '2',
-    'Задача': 'Boeing-737 - 5345',
-    'Дата начала работы': '15-06-2025',
-    'Дата конца работы': '17-06-2025',
-    'Специальность': 'Ст. Специалист',
-    'Исполнитель': 'Корякин Артём',
-    'Деталь/Агрегат': '5345',
-    'Количество': '1',
-    'Дата завершения работы по факту': '',
-    'Статус': '',
+    {
+    idServiceWork: 2,
+    task: '',
+    date_start: '15-06-2025',
+    date_end: '17-06-2025',
+    category: 'Ст. Специалист',
+    technician: 'Корякин Артём',
+    part_unit: '5345',
+    quantity: '1',
+    date_end_fact: '',
+    status: 'В работе',
   },
 ]
 
 const MAINTENANCE = [
-  // {
-  //   idMaintenance: 1,
-  //   data: '',
-  //   employeeId: 23,
-  //   aircraftId: 32,
-  //   ataId: 45,
-  //   quantity: '',
-  //   description: '',
-  // }
   {
-    'idMaintenance': '1',
-    'Дата': '20-06-2025',
-    'Исполнитель': 'Корякин Артём',
-    'Тип ВС': 'a319',
-    'Деталь/Агрегат': '111',
-    'Доп. Инф.': 'Хьюстон у нас проблемы',
+    idMaintenance: 1,
+    date: '20-06-2025',
+    technician: 'Корякин Артём',
+    aircraft_type: 'a319',
+    board: '314f134f',
+    part_unit: '111',
+    additional_information: 'Хьюстон у нас проблемы',
+    file: ''
   },
   {
-    'idMaintenance': '2',
-    'Дата': '26-06-2025',
-    'Исполнитель': 'Швец Александр',
-    'Тип ВС': 'a320',
-    'Деталь/Агрегат': '222',
-    'Доп. Инф.': '',
+    idMaintenance: 2,
+    date: '26-06-2025',
+    technician: 'Швец Александр',
+    aircraft_type: 'a320',
+    board: '314f134f',
+    part_unit: '222',
+    additional_information: '',
+    file: '',
   }
 ]
 
@@ -194,19 +196,19 @@ const ATA = [
 const POSTS = [
   {
     idPost: 1,
-    postName: 'mechanic',
+    postName: 'technician',
   },
   {
     idPost: 2,
-    postName: 'administrator',
+    postName: 'engineer',
   }
 ]
 
 export {
-  // AIRCRAFTS,
+  AIRCRAFTS,
   AIRCRAFT_TYPES,
   EMPLOYEES,
-  SPECIALIZATIONS,
+  CATEGORIES,
   // MAINTENANCE_WORKS,
   // SERIAL_NUMBERS,
   // COMPONENTS,

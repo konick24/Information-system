@@ -14,17 +14,19 @@ const createEntryList = (list) => {
     const data = entryElementCopy.querySelector('.entry-item__text--date');
     const executor = entryElementCopy.querySelector('.entry-item__text--executor');
     const title = entryElementCopy.querySelector('.entry-item__text--title');
+    const board = entryElementCopy.querySelector('.entry-item__text--board');
     const component = entryElementCopy.querySelector('.entry-item__text--component');
     const description = entryElementCopy.querySelector('.entry-item__text--description');
 
-    entryElementCopy.dataset.entryItemId = item['idMaintenance'];
-    heading.textContent = `${item['Исполнитель']} - ${item['Тип ВС']}`
-    data.textContent = item['Дата'];
-    executor.textContent = item['Исполнитель'];
-    title.textContent = item['Тип ВС'];
-    component.textContent = item['Деталь/Агрегат'];
-    if (item['Доп. Инф.']) {
-      description.textContent = item['Доп. Инф.'];
+    entryElementCopy.dataset.entryItemId = item.idMaintenance;
+    heading.textContent = `${item.technician} - ${item.board}`
+    data.textContent = item.date;
+    executor.textContent = item.technician;
+    title.textContent = item.aircraft_type;
+    board.textContent = item.board;
+    component.textContent = item.part_unit;
+    if (item.additional_information) {
+      description.textContent = item.additional_information;
     } else {
       description.textContent = 'Информация не предоставлена';
     }
