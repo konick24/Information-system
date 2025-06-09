@@ -13,7 +13,7 @@ const selectAircraftClass = '.field-group__select--aircraft-type';
 const selectBoardClass = '.field-group__select--board';
 
 const selectAircraftTypeElement = formElement.querySelector('.field-group__select--aircraft-type');
-const selectBoardElement = formElement.querySelector('.field-group__select--board');
+
 
 const onUploadButton = (evt) => {
   if (evt.target.closest('.input-file__container')) {
@@ -38,7 +38,7 @@ const onSelectChangeTitle = (evt) => {
   const fieldsetTitle = evt.target.closest('.field-group').querySelector('.field-group__title');
   const fieldsetTechnicial = fieldsetTitle.querySelector('.field-group__technician');
   const fieldsetBoard = fieldsetTitle.querySelector('.field-group__board');
-
+  const selectBoardElement = evt.target.closest('.field-group').querySelector('.field-group__select--board');
 
   if (evt.target.closest('.field-group__select--technician')) {
     fieldsetTechnicial.textContent = `${evt.target.value}`;
@@ -67,7 +67,7 @@ const getFilterBoardParam = (param) => {
 }
 
 const onSelectChangeTypeAircraft = (evt) => {
-  selectBoardElement.innerHTML = '';
+  evt.target.closest('.field-group__list').querySelector('.field-group__select--board').innerHTML = '';
   const value = evt.target.value;
 
   getSelectList(selectBoardClass, getFilterBoardParam(value));
@@ -93,7 +93,7 @@ formElement.addEventListener('click', onButtonFormHidden);
 formElement.addEventListener('click', onUploadButton);
 formElement.addEventListener('change', onSelectChangeTitle);
 
-selectAircraftTypeElement.addEventListener('change', onSelectChangeTypeAircraft);
+formElement.addEventListener('change', onSelectChangeTypeAircraft);
 
 insertButton.addEventListener('click', onButtonInsertFieldset);
 

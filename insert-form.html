@@ -45,20 +45,20 @@
             <input class="field-group__input input field-group__input--index" type="text" name="idMaintenance" hidden>
             <ul class="field-group__list">
               <li class="field-group__item">
-                <input class="field-group__input input field-group__input--date" type="date" name="date">
+                <input class="field-group__input input field-group__input--date" type="date" name="date" required>
               </li>
               <li class="field-group__item">
-                <select class="field-group__select input field-group__select--technician" name="technician">
+                <select class="field-group__select input field-group__select--technician" name="technician" required>
                   <option value="" disable selected hidden>Техник</option>
                 </select>
               </li>
               <li class="field-group__item">
-                <select class="field-group__select input field-group__select--aircraft-type" name="aircraft_type">
+                <select class="field-group__select input field-group__select--aircraft-type" name="aircraft_type" required>
                   <option value="" disable selected hidden>Тип ВС</option>
                 </select>
               </li>
               <li class="field-group__item">
-                <select class="field-group__select input field-group__select--board" name="board">
+                <select class="field-group__select input field-group__select--board" name="board" required>
                   <option value="" disable selected hidden>Борт</option>
                 </select>
               </li>
@@ -96,8 +96,8 @@
           <span class="visually-hidden">Свернуть</span>
         </button>
         <legend class="field-group__title">
-          <span class="field-group__name">Название</span>
-          <span class="field-group__aircraft"></span>
+          <span class="field-group__technician">Название</span>
+          <span class="field-group__board"></span>
         </legend>
         <button class="field-group__button field-group__button--remove button-remove" type="button">
           <span class="visually-hidden">Удалить</span>
@@ -106,16 +106,21 @@
       <input class="field-group__input input field-group__input--index" type="text" name="idMaintenance" hidden>
       <ul class="field-group__list">
         <li class="field-group__item">
-          <input class="field-group__input input field-group__input--date" type="date" name="date">
+          <input class="field-group__input input field-group__input--date" type="date" name="date" required>
         </li>
         <li class="field-group__item">
-          <select class="field-group__select input field-group__select--technician" name="technician">
+          <select class="field-group__select input field-group__select--technician" name="technician" required>
             <option value="" disable selected hidden>Техник</option>
           </select>
         </li>
         <li class="field-group__item">
-          <select class="field-group__select input field-group__select--aircraft-type" name="aircraft_type">
+          <select class="field-group__select input field-group__select--aircraft-type" name="aircraft_type" required>
             <option value="" disable selected hidden>Тип ВС</option>
+          </select>
+        </li>
+        <li class="field-group__item">
+          <select class="field-group__select input field-group__select--board" name="board" required>
+            <option value="" disable selected hidden>Борт</option>
           </select>
         </li>
         <li class="field-group__item">
@@ -125,6 +130,15 @@
         </li>
         <li class="field-group__item">
           <textarea class="field-group__input input field-group__input--additional-information" type="text" name="additional_information" placeholder="Дополнительная информация"></textarea>
+        </li>
+        <li class="field-group__item input-file">
+          <div class="input-file__container">
+            <input class="input-file__input input" type="file" name="file" id="input-file" multiple>
+            <label class="input-file__label label" for="input-file">
+              <div class="label__text" type="text"></div>
+              <div class="label__button button" type="button">Выберите файл</div>
+            </label>
+          </div>
         </li>
       </ul>
     </fieldset>
