@@ -12,8 +12,6 @@ const selectComponentClass = '.field-group__select--component';
 const selectAircraftClass = '.field-group__select--aircraft-type';
 const selectBoardClass = '.field-group__select--board';
 
-const selectAircraftTypeElement = formElement.querySelector('.field-group__select--aircraft-type');
-
 
 const onUploadButton = (evt) => {
   if (evt.target.closest('.input-file__container')) {
@@ -67,11 +65,13 @@ const getFilterBoardParam = (param) => {
 }
 
 const onSelectChangeTypeAircraft = (evt) => {
-  evt.target.closest('.field-group__list').querySelector('.field-group__select--board').innerHTML = '';
-  const value = evt.target.value;
+  if (evt.target.closest('.field-group__select--aircraft-type')) {
+    evt.target.closest('.field-group__list').querySelector('.field-group__select--board').innerHTML = '';
+    const value = evt.target.value;
 
-  getSelectList(selectBoardClass, getFilterBoardParam(value));
-  onSelectChangeTitle(evt);
+    getSelectList(selectBoardClass, getFilterBoardParam(value));
+    onSelectChangeTitle(evt);
+  }
 }
 
 const getSelectsInsertForm = () => {
