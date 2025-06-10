@@ -11,8 +11,6 @@ const selectSpecializationClass = '.field-group__select--category';
 const selectExecutorClass = '.field-group__select--technician';
 const selectComponentClass = '.field-group__select--component';
 
-const selectTaskElement = document.querySelector('.field-group__select--task');
-
 const getSelectsPlanningForm = () => {
   getSelectList(selectTaskClass, selectParametrs.task);
   getSelectList(selectSpecializationClass, selectParametrs.category);
@@ -23,8 +21,10 @@ const getSelectsPlanningForm = () => {
 getSelectsPlanningForm();
 
 const onSelectTaskChange = (evt) => {
-  const fieldsetTitle = evt.target.closest('.field-group').querySelector('.field-group__title');
-  fieldsetTitle.textContent = evt.target.value;
+  if (evt.target.closest('.field-group__select--task')) {
+    const fieldsetTitle = evt.target.closest('.field-group').querySelector('.field-group__title');
+    fieldsetTitle.textContent = evt.target.value;
+  }
 }
 
 const onButtonInsertFieldset = () => {
@@ -36,6 +36,6 @@ const onButtonInsertFieldset = () => {
 formElement.addEventListener('click', onButtonFormRemove);
 formElement.addEventListener('click', onButtonFormHidden);
 
-selectTaskElement.addEventListener('change', onSelectTaskChange)
+formElement.addEventListener('change', onSelectTaskChange)
 
 insertButton.addEventListener('click', onButtonInsertFieldset);
