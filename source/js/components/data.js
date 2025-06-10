@@ -129,6 +129,8 @@ const SERVICE_WORKS = [
   {
     idServiceWork: 1,
     task: 'a319 - 314f134f',
+    aircraft_type: 'a319',
+    board: '314f134f',
     date_start: '20-06-2025',
     date_end: '26-06-2025',
     category: 'Работяга',
@@ -141,6 +143,8 @@ const SERVICE_WORKS = [
   {
     idServiceWork: 2,
     task: 'a320 - 314f134f',
+    aircraft_type: 'a320',
+    board: '314f134f',
     date_start: '15-06-2025',
     date_end: '17-06-2025',
     category: 'Ст. Специалист',

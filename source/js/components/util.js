@@ -44,6 +44,7 @@ const onFormSubmit = (form, arr, pattern, message) => {
 
     for (let i = 0; i < objCount; i++) {
       let formObjectCopy = {...pattern};
+      let taskString = '';
       for (let j = i * objLength; j < objLength * (i + 1); j++) {
         let key;
         let value;
@@ -60,6 +61,22 @@ const onFormSubmit = (form, arr, pattern, message) => {
         } else {
           key = formInputs[j].name;
           value = formInputs[j].value;
+        }
+
+        if (formInputs[j].name === 'task') {
+          taskString = formInputs[j].value.split(' - ');
+        }
+        if (formObjectCopy.idServiceWork) {
+          if (formInputs[j].name === 'aircraft_type' || formInputs[j].name === 'board') {
+            console.log(taskString);
+            if (formInputs[j].name === 'aircraft_type') {
+              key = formInputs[j].name;
+              value = taskString[0];
+            } else {
+              key = formInputs[j].name;
+              value = taskString[1];
+            }
+          }
         }
         formObjectCopy[key] = value;
       }
@@ -88,7 +105,7 @@ const onFormItemSubmit = (form, arr, message) => {
     const id = evt.target.closest('.item').dataset.taskItemId;
     const formInput = form.querySelector('.input');
     arr[id - 1][formInput.name] = formInput.value;
-    arr[id - 1]['Статус'] = message;
+    arr[id - 1].status = message;
     console.log(arr);
     onButtonFormRemove(evt);
   })

@@ -12,6 +12,8 @@ const maintenance = {
 const serviceWork = {
   idServiceWork: '',
   task: '',
+  aircraft_type: '',
+  board: '',
   date_start: '',
   date_end: '',
   category: '',

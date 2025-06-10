@@ -1,0 +1,46 @@
+.report__item {
+  & + & {
+    border-top: 1px solid #cdcdcd;
+  }
+}
+
+.report__container {
+  padding: 15px 0;
+}
+
+.report__bar {
+  margin-bottom: 15px;
+
+  @media (min-width: 768px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.report__heading {
+  margin: 0;
+}
+
+.report__select-container {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  background-color: #dcdcdc;
+  border-radius: 5px;
+}
+
+.report__select {
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+}
+
+.report__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background-color: #ffffff;
+  border-radius: 5px;
+}

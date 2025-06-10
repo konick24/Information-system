@@ -1,0 +1,21 @@
+.report-item__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(11, 1fr);
+}
+
+.report-item__item {
+  display: flex;
+  align-items: center;
+
+  &:not(:last-child) {
+    border-right: 1px solid #cdcdcd;
+  }
+}
+
+.report-item__text {
+  padding: 10px 15px;
+  display: block;
+}
