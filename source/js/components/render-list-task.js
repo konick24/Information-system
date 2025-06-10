@@ -19,14 +19,14 @@ const createTaskList = (list) => {
     const quantity = taskElementCopy.querySelector('.component__text--quantity');
     const form = taskElementCopy.querySelector('.form');
 
-    taskElementCopy.dataset.taskItemId = item['idServiceWork'];
-    heading.textContent = item['Задача'];
-    taskName.textContent = item['Задача'];
-    dateStart.textContent = item['Дата начала работы'];
-    dateEnd.textContent = item['Дата конца работы'];
-    executor.textContent = item['Исполнитель'];
-    component.textContent = item['Деталь/Агрегат'];
-    quantity.textContent = item['Количество'];
+    taskElementCopy.dataset.taskItemId = item.idServiceWork;
+    heading.textContent = `${item.technician} - ${item.task}`;
+    taskName.textContent = item.task;
+    dateStart.textContent = item.date_start;
+    dateEnd.textContent = item.date_end;
+    executor.textContent = item.technician;
+    component.textContent = item.part_unit;
+    quantity.textContent = item.quantity;
 
     onFormItemSubmit(form, SERVICE_WORKS, 'Завершено');
 

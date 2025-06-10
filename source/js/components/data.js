@@ -128,7 +128,7 @@ const CATEGORIES = [
 const SERVICE_WORKS = [
   {
     idServiceWork: 1,
-    task: '',
+    task: 'a319 - 314f134f',
     date_start: '20-06-2025',
     date_end: '26-06-2025',
     category: 'Работяга',
@@ -138,9 +138,9 @@ const SERVICE_WORKS = [
     date_end_fact: '',
     status: 'В работе',
   },
-    {
+  {
     idServiceWork: 2,
-    task: '',
+    task: 'a320 - 314f134f',
     date_start: '15-06-2025',
     date_end: '17-06-2025',
     category: 'Ст. Специалист',
