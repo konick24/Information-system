@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/style.min.css">
+</head>
+
+<body>
+  <header class="page-header">
+    <div class='page-header__container container'>
+      <div class="page-header__bar">
+        <a class="page-header__logo logo" href="./administrator.html">
+          <img class="logo__icon" src="./images/logo.svg" width="20" height="20" alt="Логотип компании">
+          <span class="logo__title logo__title--one">ВС в</span>
+          <span class="logo__title logo__title--two">тонусе</span>
+        </a>
+      </div>
+      <nav class="page-header__nav nav">
+        <!-- <a class="nav__button nav__button--exit button" href="#">Выход</a> -->
+        <a class="nav__button nav__button--back button" href="./administrator.html">Назад</a>
+      </nav>
+    </div>
+  </header>
+  <main class="page-main">
+    <h1 class="visually-hidden">Просмотр записей</h1>
+    <section class="page-main__section report">
+      <div class="report__container container">
+        <div class="report__bar">
+          <h2 class="report__heading">Список задач</h2>
+          <div class="report__select-container">
+            <select class="report__select input report__select--main" name="Фильтр">
+              <option value="Все">Все записи</option>
+              <option value="Тип ВС">По типу ВС</option>
+              <option value="Исполнитель">По сотруднику</option>
+            </select>
+            <select class="report__select input report__select--secondary" name="Критерий фильтрации">
+            </select>
+          </div>
+        </div>
+        <ul class="report__list">
+
+          <li class="report__item report-item item">
+            <ul class="report-item__list">
+              <li class="report-item__item">
+                <span class="report-item__text report-item__text--aircraft-type">Тип ВС</span>
+              </li>
+              <li class="report-item__item">
+                <span class="report-item__text report-item__text--board">Борт</span>
+              </li>
+              <li class="report-item__item">
+                <span class="report-item__text report-item__text--date-identification">Дата выявления</span>
+              </li>
+              <li class="report-item__item">
+                <span class="report-item__text report-item__text--date-start">Дата начала</span>
+              </li>
+              <li class="report-item__item">
+                <span class="report-item__text report-item__text--date-end">Дата завершения</span>
+              </li>
+              <li class="report-item__item">
+                <span class="report-item__text report-item__text--technician">Техник</span>
+              </li>
+              <li class="report-item__item">
+                <span class="report-item__text report-item__text--category">Категория</span>
+              </li>
+              <li class="report-item__item">
+                <span class="report-item__text report-item__text--part-unit">Деталь/Агрегат</span>
+              </li>
+              <li class="report-item__item">
+                <span class="report-item__text report-item__text--quantity">Количество</span>
+              </li>
+              <li class="report-item__item">
+                <span class="report-item__text report-item__text--status">Статус</span>
+              </li>
+              <li class="report-item__item">
+                <span class="report-item__text report-item__text--date-end-fact">Дата завершения по факту</span>
+              </li>
+            </ul>
+          </li>
+
+        </ul>
+
+      </div>
+    </section>
+  </main>
+  <template id="item-task">
+    <li class="report__item report-item item">
+      <ul class="report-item__list">
+        <li class="report-item__item">
+          <span class="report-item__text report-item__text--aircraft-type">Тип ВС</span>
+        </li>
+        <li class="report-item__item">
+          <span class="report-item__text report-item__text--board">Борт</span>
+        </li>
+        <li class="report-item__item">
+          <span class="report-item__text report-item__text--date-identification">Дата выявления</span>
+        </li>
+        <li class="report-item__item">
+          <span class="report-item__text report-item__text--date-start">Дата начала</span>
+        </li>
+        <li class="report-item__item">
+          <span class="report-item__text report-item__text--date-end">Дата завершения</span>
+        </li>
+        <li class="report-item__item">
+          <span class="report-item__text report-item__text--technician">Техник</span>
+        </li>
+        <li class="report-item__item">
+          <span class="report-item__text report-item__text--category">Категория</span>
+        </li>
+        <li class="report-item__item">
+          <span class="report-item__text report-item__text--part-unit">Деталь/Агрегат</span>
+        </li>
+        <li class="report-item__item">
+          <span class="report-item__text report-item__text--quantity">Количество</span>
+        </li>
+        <li class="report-item__item">
+          <span class="report-item__text report-item__text--status">Статус</span>
+        </li>
+        <li class="report-item__item">
+          <span class="report-item__text report-item__text--date-end-fact">Дата завершения по факту</span>
+        </li>
+      </ul>
+    </li>
+  </template>
+  <script src="./js/report.js" type="module"></script>
+</body>
+
+</html>
