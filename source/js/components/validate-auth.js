@@ -9,6 +9,7 @@ const errorElement = authFormElement.querySelector('.auth-form__container-error'
 let currentPost = '';
 
 const POST = {
+  'Механик': 'technician',
   'Техник': 'technician',
   'Инженер': 'engineer',
 }

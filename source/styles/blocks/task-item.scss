@@ -9,6 +9,7 @@
 
 .task-item__bar {
   display: grid;
+  min-height: 36px;
   grid-template-columns: 1fr 30px;
   align-items: center;
   background-color: #dcdcdc;
@@ -16,12 +17,7 @@
 
 .task-item__heading {
   margin: 0;
-}
-
-.task-item__list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+  width: 95%;
 }
 
 .task-item__button {
@@ -71,7 +67,7 @@
 .task-item__list {
   margin: 0;
   padding: 0;
-  margin-top: 20px;
+  list-style: none;
   max-height: 100vh;
   list-style: none;
   display: flex;
