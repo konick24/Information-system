@@ -48,32 +48,30 @@ const onFormSubmit = (form, arr, pattern, message) => {
       for (let j = i * objLength; j < objLength * (i + 1); j++) {
         let key;
         let value;
+        key = formInputs[j].name;
+
         if (j === i * objLength || j === i * objLength + 1) {
           if (j === i * objLength) {
-            key = formInputs[j].name;
             value = lastId++;
           } else if (message) {
-            key = formInputs[j].name;
             value = message;
           } else {
-            continue;
+            value = formInputs[j].value;
           }
         } else {
-          key = formInputs[j].name;
           value = formInputs[j].value;
         }
 
         if (formInputs[j].name === 'task') {
           taskString = formInputs[j].value.split(' - ');
         }
+
         if (formObjectCopy.idServiceWork) {
           if (formInputs[j].name === 'aircraft_type' || formInputs[j].name === 'board') {
             console.log(taskString);
             if (formInputs[j].name === 'aircraft_type') {
-              key = formInputs[j].name;
               value = taskString[0];
             } else {
-              key = formInputs[j].name;
               value = taskString[1];
             }
           }
