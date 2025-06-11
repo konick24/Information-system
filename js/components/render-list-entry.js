@@ -41,8 +41,8 @@ const getEntryList = (mainParam = '', secondaryParam = '') => {
     MAINTENANCE.forEach((maintenance) => {
       if (maintenance[mainParam] === secondaryParam) {
         maintenances.push(maintenance);
-    }
-  })
+      }
+    })
   } else {
     maintenances = [...MAINTENANCE];
   }

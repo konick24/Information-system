@@ -8,7 +8,7 @@ const AIRCRAFTS = [
     flightTime: 1245,
     status: true,
   },
-    {
+  {
     idAircraft: 2,
     factoryNumber: '235231',
     registrationNumber: '786743h',
@@ -92,15 +92,6 @@ const CATEGORIES = [
   }
 ]
 
-// const MAINTENANCE_WORKS = [
-//   {
-//     idMaintenance: 1,
-//     maintenanceWorkName: '',
-//     flightTime: ,
-//     time: ,
-//   }
-// ]
-
 // const SERIAL_NUMBERS = [
 //   {
 //     idSerialNumber: 1,
@@ -118,21 +109,14 @@ const CATEGORIES = [
 //   }
 // ]
 
-// const COMPONENT_TYPES = [
-//   {
-//     idType: 1,
-//     typeName: ,
-//   }
-// ]
-
 const SERVICE_WORKS = [
   {
     idServiceWork: 1,
     task: 'a319 - 314f134f',
     aircraft_type: 'a319',
     board: '314f134f',
-    date_start: '20-06-2025',
-    date_end: '26-06-2025',
+    date_start: '2025-06-20',
+    date_end: '2025-06-26',
     category: 'Работяга',
     technician: 'Швец Александр',
     part_unit: '5345',
@@ -145,8 +129,8 @@ const SERVICE_WORKS = [
     task: 'a320 - 314f134f',
     aircraft_type: 'a320',
     board: '314f134f',
-    date_start: '15-06-2025',
-    date_end: '17-06-2025',
+    date_start: '2025-06-15',
+    date_end: '2025-06-17',
     category: 'Ст. Специалист',
     technician: 'Корякин Артём',
     part_unit: '5345',
@@ -159,7 +143,7 @@ const SERVICE_WORKS = [
 const MAINTENANCE = [
   {
     idMaintenance: 1,
-    date: '20-06-2025',
+    date: '2025-06-20',
     technician: 'Корякин Артём',
     aircraft_type: 'a319',
     board: '314f134f',
@@ -169,7 +153,7 @@ const MAINTENANCE = [
   },
   {
     idMaintenance: 2,
-    date: '26-06-2025',
+    date: '2025-06-26',
     technician: 'Швец Александр',
     aircraft_type: 'a320',
     board: '314f134f',
@@ -208,17 +192,27 @@ const POSTS = [
   }
 ]
 
+const STATUS = [
+  {
+    idStatus: 1,
+    statusText: 'В работе',
+  },
+    {
+    idStatus: 2,
+    statusText: 'Завершено',
+  },
+]
+
 export {
   AIRCRAFTS,
   AIRCRAFT_TYPES,
   EMPLOYEES,
   CATEGORIES,
-  // MAINTENANCE_WORKS,
   // SERIAL_NUMBERS,
   // COMPONENTS,
-  // COMPONENT_TYPES,
   SERVICE_WORKS,
   MAINTENANCE,
   ATA,
   POSTS,
+  STATUS,
 }

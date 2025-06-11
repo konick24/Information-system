@@ -33,16 +33,23 @@
           <div class="report__select-container">
             <select class="report__select input report__select--main" name="Фильтр">
               <option value="Все">Все записи</option>
-              <option value="Тип ВС">По типу ВС</option>
-              <option value="Исполнитель">По сотруднику</option>
+              <option value="status">По статусу работы</option>
+              <option value="aircraft_type">По типу ВС</option>
+              <option value="technician">По сотруднику</option>
+              <option value="date">По дате</option>
             </select>
             <select class="report__select input report__select--secondary" name="Критерий фильтрации">
             </select>
+            <form class="report__form-date report__form-date hidden" method="post" action="#">
+              <input class="report__date input report__date--start" type="date" name="date-start">
+              <input class="report__date input report__date--end" type="date" name="date-start">
+              <button class="report__button button" type="submit">Вывести</button>
+            </form>
           </div>
         </div>
         <ul class="report__list">
 
-          <li class="report__item report-item item">
+          <li class="report__item report-item item" id="header">
             <ul class="report-item__list">
               <li class="report-item__item">
                 <span class="report-item__text report-item__text--aircraft-type">Тип ВС</span>
