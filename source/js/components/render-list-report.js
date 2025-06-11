@@ -3,10 +3,22 @@ import { MAINTENANCE, SERVICE_WORKS } from "./data.js";
 const taskListElement = document.querySelector('.report__list');
 const taskElement = document.querySelector('#item-task').content.querySelector('.report-item');
 
-const createReportList = () => {
-  SERVICE_WORKS.forEach((item, index) => {
+let serviceWork = [];
+
+const createReportList = (list) => {
+  const elements = taskListElement.querySelectorAll('.report-item');
+  let deleteElement = false;
+  elements.forEach((element) => {
+    if (deleteElement) {
+      element.remove();
+    }
+    if (element.id === 'header') {
+      deleteElement = true;
+    }
+  })
+
+  list.forEach((item, index) => {
     const taskElementCopy = taskElement.cloneNode(true);
-    // console.log(taskElementCopy);
 
     const aircraftType = taskElementCopy.querySelector('.report-item__text--aircraft-type');
     const board = taskElementCopy.querySelector('.report-item__text--board');
@@ -36,6 +48,46 @@ const createReportList = () => {
 
     taskListElement.insertAdjacentElement('beforeend', taskElementCopy);
   })
+  serviceWork = [];
 }
 
-export { createReportList }
+const getReportList = (mainParam = '', secondaryParam = '') => {
+  if (mainParam && secondaryParam) {
+    SERVICE_WORKS.forEach((item) => {
+      if (item[mainParam] === secondaryParam) {
+        serviceWork.push(item);
+      }
+    })
+  } else {
+    serviceWork = [...SERVICE_WORKS];
+  }
+  createReportList(serviceWork);
+}
+
+const getDate = (arr) => {
+  const date = arr.split('-').map((item) => Number(item));
+  return date;
+};
+
+const getReportListByDate = (dateStartString = '', dateEndString = '') => {
+  if (dateStartString && dateEndString) {
+    const dateStartFilter = getDate(dateStartString);
+    const dateEndFilter = getDate(dateEndString);
+
+    SERVICE_WORKS.forEach((item) => {
+      const dateStart = getDate(item.date_start);
+
+      if ((dateStart[2] >=  dateStartFilter[2] &&
+        dateStart[2] <=  dateEndFilter[2] &&
+        dateStart[1] >=  dateStartFilter[1]&&
+        dateStart[1] <=  dateEndFilter[1] &&
+        dateStart[0] >=  dateStartFilter[0]&&
+        dateStart[0] <=  dateEndFilter[0])) {
+        serviceWork.push(item);
+      }
+    })
+    createReportList(serviceWork);
+  }
+}
+
+export { getReportList, getReportListByDate }

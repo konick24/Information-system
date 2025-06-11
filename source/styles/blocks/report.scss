@@ -24,17 +24,43 @@
 
 .report__select-container {
   padding: 20px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-wrap: wrap;
   gap: 15px;
   background-color: #dcdcdc;
   border-radius: 5px;
 }
 
 .report__select {
+  min-width: 150px;
+  width: auto;
   padding: 5px;
   border: none;
   border-radius: 5px;
+
+  &--secondary.hidden {
+    display: none;
+  }
+}
+
+.report__form-date {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+
+  &.hidden {
+    display: none;
+  }
+}
+
+.report__button {
+  padding: 6px;
+}
+
+.report__date {
+  padding: 5px;
+  min-width: 150px;
+  width: auto;
 }
 
 .report__list {

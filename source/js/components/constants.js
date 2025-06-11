@@ -6,6 +6,7 @@ import {
   AIRCRAFT_TYPES,
   MAINTENANCE,
   CATEGORIES,
+  STATUS,
 } from "./data.js"
 
 const selectParametrs = {
@@ -44,6 +45,12 @@ const selectParametrs = {
     words: ['categoryTitle'],
     separator: '',
   },
+  status : {
+    array: STATUS,
+    words: ['statusText'],
+    separator: '',
+  },
+
   default: {
     words: [],
     separator: '',
